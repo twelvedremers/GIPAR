@@ -1,0 +1,134 @@
+@(formulario:Form[Formulario],lista:List[puntos_Fijos],lista2:List[puntos_Varios],id:Integer)
+
+
+@import views.html.include._
+@import helper._
+@import bootstrap3._
+
+
+@main("Registro de Evento",0){
+
+
+
+<body class="perfil">
+	<section class="registro2">
+	<form action="" method="post">
+		<legend class="text-center">@if(flash.containsKey("invalid")) {
+	<p style="color: red">
+		@flash.get("invalid")
+	</p>
+}</legend>
+@form(routes.proyectos_Controlador.registrarPunto(id)) {
+	
+
+	
+}
+
+@if(Integer.parseInt(session.get("cod_G"))==Reunion.find.byId(id).miembro.cod_G || session.get("nivel_A")=="Administrador" ){
+<table class="table table-striped table-hover ">
+		  <h4 class="tabla"><b>Punto Fijos</b></h4>
+		  <br>
+		  <thead>
+		    <tr>
+
+		      
+		      <th>Punto</th>
+		      <th>modificar</th>
+		  </thead>
+		  <tbody>
+	    <tr>
+		     
+		     
+		    </tr>
+		   
+
+@for(punto <- lista){
+		     
+		     <tr>
+              <td>@punto.punto.punto</td>
+		      <td><a href="@routes.proyectos_Controlador.borrarPF(id,punto.punto.punto)" class="btn btn-primary btn-xs">borrar</a></td>
+             </tr>
+		       
+    }
+     
+    
+        	  </tbody>
+		</table> 
+
+<br>
+<br>
+@form(routes.proyectos_Controlador.registrarPunto(id)) {
+
+	
+<form action="" method="POST">
+	        <div class="input-group">
+	          @text(formulario("puntoF"),"punto a tratar")
+	            <span class="input-group-btn">
+	             
+	             <button type="submit" id="submit" class="btn btn-primary ">registrar</button>
+	            </span>
+	            
+	        </div>
+	</form>  
+    <br>
+     <br>
+ }
+
+ }
+
+
+<table class="table table-striped table-hover ">
+		  <h4 class="tabla"><b>Punto varios</b></h4>
+		  <br>
+		  <thead>
+		    <tr>
+		      
+		      <th>Punto</th>
+		      <th>modificar</th>
+		  </thead>
+		  <tbody>
+	    <tr>
+		     
+		     
+		    </tr>
+		   
+
+@for(punto <- lista2){
+		     
+		     <tr>
+              <td>@punto.punto.punto</td>
+              <td><a href="@routes.proyectos_Controlador.borrarPV(id,punto.punto.punto)" class="btn btn-primary btn-xs">borrar</a></td>
+		      
+             </tr>
+		       
+    }
+     
+    
+        	  </tbody>
+		</table> 
+
+<br>
+<br>
+@form(routes.proyectos_Controlador.registrarPunto(id)) {
+
+	
+<form action="" method="POST">
+	        <div class="input-group">
+	          @text(formulario("puntoV"),"punto a tratar")
+	            <span class="input-group-btn">
+	             
+	             <button type="submit" id="submit" class="btn btn-primary ">registrar</button>
+	            </span>
+	            
+	        </div>
+	</form>  
+    <br>
+     <br>
+ }
+<br>
+<br>
+
+  <a href="@routes.proyectos_Controlador.ListarReuniones" class="btn btn-primary" role="button">Terminar</a>
+</section>
+</body>
+}

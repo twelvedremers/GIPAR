@@ -1,0 +1,66 @@
+@(proyecto:Proyecto,repo:Reporte,comentario:String,tipo: Integer = 0)
+
+@import views.html.include._
+
+@main("Reporte Final de Proyecto",0){
+<body class="perfil">
+
+<div class="content_white">
+
+  <h2>Reportes! Proyecto</h2>
+
+</div>
+<div class="cuerpo-reportes">
+	<h4>Nombre:<b> @proyecto.getNombre()</b></h4>
+	<h4>Fecha:@repo.fecha</b></h4>
+	<h4>Numero de actividades Propuestas:@Programacion.NProgramacion(proyecto)</h4>
+	<h4>Numero de actividades finalizadas:@Programacion.NPFrogramacion(proyecto)</h4>
+	<h4>Numero de participantes Inicial:@Asistencia_Proyecto.numeroA(proyecto)</h4>
+	<h4>Numero de participantes Final:@Asistencia_Proyecto.numeroFA(proyecto)</h4>
+	<h4>Numero de Reconocimientos:@proyecto.premios.size()</h4>
+	
+	<br>
+    <p>@comentario</p>
+    <br>
+     	@if(tipo!=1){
+		<table class="table table-striped table-hover ">
+			  <h4 class="tabla"> Fecha</h4>
+			  <thead>
+			    <tr>
+			      <th></th>
+			      <th>Fecha Planificada</th>
+			      <th>Fecha Real</th>
+			      <th>Tardanza/dias</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			@for(programacion <- proyecto.programacion){
+			    <tr>
+				     <td></td>
+				     <td>@programacion.fecha_programada_inicial</td>
+				    @if(programacion.fecha_Real!=null){
+				      	<td>@programacion.fecha_Real</td>
+				     }else{
+	                  	<td>no se realizo</td>
+				      }
+				    <td>@programacion.Diferencia()</td>
+			    </tr>
+			    }
+			     <tr>
+			      <td><b>Total</b></td>
+			      <td>@proyecto.tiempo_estimado</td>
+			      <td>@repo.fecha</td>
+			      <td>@proyecto.DiferenciaT() </td>
+			    </tr>
+			  </tbody>
+			</table> 
+     <br>
+
+     <h4>Porcentaje de eficiencia: @(Programacion.NPFrogramacion(proyecto)/(Programacion.NProgramacion(proyecto)*1.00)*100) %</h4>
+     <h4>Porcentaje de Responsabilidad: @((proyecto.DiferenciaT()/Programacion.findProgramacion(proyecto).size())*100) %</h4>
+
+	}
+</div>
+
+</body>
+}

@@ -1,0 +1,133 @@
+@(formulario:Form[Formulario],lista:List[Telefonos],dias:List[String],horas:List[String],lista3:List[Disponibilidad],miembro:Miembro)
+
+
+@import views.html.include._
+@import helper._
+@import bootstrap3._
+
+
+@main("Registro de Evento",0){
+
+
+
+<body class="perfil">
+	
+	<form action="" method="post">
+		<legend class="text-center">@if(flash.containsKey("invalid")) {
+	<p style="color: red">
+		@flash.get("invalid")
+	</p>
+}</legend>
+
+
+@form(routes.proyectos_Controlador.registrarPunto(miembro.cod_G)) {
+	
+}
+
+<div class="registro2">
+
+<table class="table table-striped table-hover ">
+		  <h4 class="tabla"><b>Registrar Telefono</b></h4>
+		  <br>
+		  <thead>
+		    <tr>
+
+		      <th>Telefono</th>
+		
+		  </thead>
+		  <tbody>
+	    <tr>    
+		    </tr>
+		   
+
+@for(telf <- lista){
+		     
+		     <tr>
+              <td>@telf.telefono.telefono</td>
+             </tr>
+		       
+ }
+        	  </tbody>
+		</table> 
+
+
+@form(routes.Cordinador.registrarTelf(miembro.cod_G)) {
+
+	
+<form action="" method="POST">
+	        <div class="input-group">
+	          @text(formulario("telf"),"telefono")
+	            <span class="input-group-btn">
+	             
+	             <button type="submit" id="submit" class="btn btn-primary ">registrar</button>
+	            </span>
+	            
+	        </div>
+	</form>  
+ }
+
+</div>
+<div class="registro2">
+	<table class="table table-striped table-hover ">
+		  <h4 class="tabla"><b>Disponibilidad</b></h4>
+		  <br>
+		  <thead>
+		    <tr>
+		      
+		      <th>Dia</th>
+		      <th>Hora</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+	    <tr>
+		     </tr>
+		      @for(dispo <- lista3){
+		    
+
+		   
+		     <tr>
+              <td>@dispo.disponibilidad.dia</td>
+		      <td>@dispo.disponibilidad.hora</td>
+		     </tr>
+        }
+		                          
+		   
+		  </tbody>
+  </table> 
+
+
+  @form(routes.Cordinador.registrardispo(miembro.cod_G)) {
+
+	
+<form action="" method="POST">
+	        <div class="form-group">
+
+      <label> Dia</label>
+      @selector(formulario("dia"),dias,false)
+      <label> Hora</label>
+      @selector(formulario("hora"),horas,false)
+
+    </div>
+     <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+	</form>  
+    <br>
+ }
+ 
+ @if(session.get("nivel_A")=="Administrador" && miembro.estado){
+
+
+  <a href="@routes.Normal.confi(Integer.parseInt(miembro.cod_G+""))"  class="btn btn-primary  btn-block">modificación informacion Personal</a>
+  <br>
+    <br>
+    <legend class="text-center">  </legend>
+ <a href="@routes.Cordinador.Desactivar(miembro.cod_G)" class="btn btn-primary" role="button">Desactivar miembro</a>
+
+  }
+
+<br>
+<br>
+
+  <a href="@routes.Normal.Lista_miembro" class="btn btn-primary" role="button">Terminar</a>
+</div>
+</body>
+}

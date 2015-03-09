@@ -1,0 +1,62 @@
+@(articulo:Articulo,areas:List[Area_articulo])
+
+@import views.html.include._
+@import helper._
+
+@main(articulo.titulo,1){
+<body class="perfil">
+
+	<div class="panel panel-default vista-articulo">
+  		<div class="panel-heading" ><h2> @articulo.titulo</h2></div>
+	  		<div class="panel-body">
+	    		
+	    		<p>
+	    		@articulo.contenido	
+	    		</p>
+
+	    		<p>Fecha de publicación: @articulo.fecha</p>
+                <p>Tema:</p>
+	   @if(areas!=null || areas.size()==0){
+	    		
+	    		<ul>
+		       @for(area <- areas){
+
+                       <li>@area.area_Articulo.area</li>
+                               }
+                         </ul> 
+            }else{
+
+           <p>Sin especificar</p>
+
+            }
+	    		<label class="nom-creadores-articulos"> Autores(a): 
+
+                   
+			@for(escritor <- articulo.escritores){
+
+        <p>@escritor.nombreCompleto()</p>
+                           }
+                               
+	    @if(articulo.proyecto!=null){
+
+	    <p>El Articulo se presentara en el evento @articulo.proyecto.getNombre()</p>
+
+
+	    }
+
+	   
+	    		
+	    		</label>
+	    		<br>
+
+	    @if(session.get("nivel_A")=="Coordinador" || session.get("nivel_A")=="Administrador"){
+           <a  type="submit" href="@routes.Normal.borrarA(articulo.cod_Articulo)" class="btn btn-primary">Borrar Articulo</a>
+}
+
+	  		</div>
+	</div>
+		
+
+
+</body>
+}

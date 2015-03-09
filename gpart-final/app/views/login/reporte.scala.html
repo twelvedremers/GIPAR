@@ -1,0 +1,28 @@
+ @(formulario:Form[Formulario],escritor:Miembro)
+
+@import helper._
+@import bootstrap3._
+
+@main("Descripcion_proyecto",0){
+<body class="fondo-elec-gris">
+<div class="registro">
+@form(routes.principal.CrearReporteM()){
+
+	 <legend class="text-center">  Crear Reporte Especifico</legend>
+   
+    <label>descripcion del reporte</label>
+    @textareaB(formulario("contenido"),"3")
+    <br>
+    @if(session.get("nivel_A")=="Administrador"){
+     <label>Proyecto del que se hara el reporte</label>
+    @select4(formulario("area"),Proyecto.find.where().eq("estado","A").findList())
+    }else{
+     <label>Proyecto del que se hara el reporte</label>
+        @select4(formulario("area"),escritor.ListaProyectos())  
+   }
+		<button type="submit" id="submit" class="btn btn-primary ">Registrar</button>
+
+		}
+	</div>
+</body>
+}

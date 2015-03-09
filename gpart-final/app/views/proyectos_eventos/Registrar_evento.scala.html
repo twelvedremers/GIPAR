@@ -1,0 +1,55 @@
+@(formulario:Form[Formulario],lista:List[Miembro])
+
+
+@import views.html.include._
+@import helper._
+@import bootstrap3._
+
+
+@main("Registro de Evento",6){
+
+
+
+<body class="fondo-elec-gris">
+	<section class="registro">
+	<form action="" method="post">
+		<legend class="text-center">@if(flash.containsKey("invalid")) {
+	<p style="color: red">
+		@flash.get("invalid")
+	</p>
+}</legend>
+
+@form(routes.proyectos_Controlador.RegistrarE()) {
+		<div class="form-group">
+			<label>Ttulo</label>
+		       @text(formulario("titulo"),placeholder = "titulo")
+
+		      <label>Area</label>
+		       @text(formulario("area"),placeholder = "Area")
+
+
+		      <label>Descripción</label>
+		      @textareaB(formulario("contenido"),"4")
+
+
+		      <label>Ubicacion del evento</label>
+		      @text(formulario("direccion"),placeholder = "Ubicacion")
+
+		  
+		    <label>Fecha limite</label>
+		     @textFecha(formulario("hasta"))  
+
+		        <label> cordinador</label>
+                @selector2(formulario("cordinador"),lista)
+
+		      <label>presupuesto</label>
+		      @numerico(formulario("valor"),placeholder = "presupuesto")
+
+
+		</div>
+		<button type="submit" class="btn btn-primary btn-block">Siguiente</button>
+	</form>
+	}
+</section>
+</body>
+}

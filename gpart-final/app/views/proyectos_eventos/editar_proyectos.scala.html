@@ -1,0 +1,45 @@
+@(formulario:Form[Formulario],tipo:Integer,id:Integer)
+
+
+@import helper._
+@import bootstrap3._
+
+
+@main("modificacion general",6){
+
+<body class="fondo-elec-gris">
+	<section class="registro">
+
+	<legend class="text-center">Modificacion General</legend>
+	@form(routes.proyectos_Controlador.CambioGeneral(id,tipo)) {
+	<form action="" method="post">
+		<div class="form-group">
+			<label>Ttulo</label>
+		       @text(formulario("titulo"),placeholder = "titulo",false)
+
+		      <label>Area</label>
+		       @text(formulario("area"),placeholder = "Area",false)
+
+		      <label>Descripción</label>
+		      @textareaB(formulario("contenido"),"4",false)
+
+           @if(tipo==2){
+		      <label>Ubicacion del evento</label>
+		      @text(formulario("direccion"),placeholder = "Ubicacion",false)
+
+		        <label>presupuesto</label>
+		      @numerico(formulario("valor"),placeholder = "presupuesto",false)
+
+			}
+
+		      <label>Tiempo estimado</label>
+		       @textFecha(formulario("hasta"),false)  
+
+		</div>
+		<button type="submit" class="btn btn-primary btn-block">Guardar cambios</button>
+	</form>
+	}
+</section>
+
+</body>
+}

@@ -1,0 +1,123 @@
+@(reu:Reunion,lista2:List[puntos_Fijos],lista:List[puntos_Varios],todos:List[Miembro])
+
+
+@main("Descripcion_Reunion",5){
+<body>
+ <br>
+  <legend class="text-center">@if(flash.containsKey("invalid")) {
+	<p style="color: red">
+		@flash.get("invalid")
+	</p>
+}</legend>
+
+	<div class="vista-reunion">
+              <div class="texto">
+				<h3>Numero de reunion: </h3>
+				<h4>@reu.n_Reunion</h4><br><br>
+				<h3>Coordinador:</h3>
+				<h4>@reu.miembro.nombreCompleto()</h4><br><br>
+				@if(reu.fecha_Reunion!=null){
+				<h3>Fecha propuesta:</h3>
+				<h4>@reu.fecha_Reunion</h4><br><br>
+		    
+		      }
+			
+				
+                </div>
+				<table class="table table-striped table-hover">
+					<h3 class="tabla">Temas Fijos</h3>
+					<thead>
+						<tr>
+							<th>Titulo del tema</th>
+						</tr>
+					</thead>
+					<tbody>
+			@if(lista2.size()!=0){
+
+					@for(punto <- lista2){
+						<tr>
+							<td>@punto.punto.punto</td>
+						</tr>
+						}
+						}else{
+                       <tr>
+							<td>no hay temas registrado</td>
+						</tr>
+
+						}
+					</tbody>
+				</table> 
+				
+				<table class="table table-striped table-hover">
+					<h3 class="tabla">Temas Varios</h3>
+					<thead>
+						<tr>
+							<th>Titulo del tema</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+				@if(lista.size()!=0){
+
+			     	@for(puntos <- lista){
+						<tr>
+							<td>@puntos.punto.punto</td>
+						</tr>
+						} 
+						}else{
+
+						 <tr>
+							<td>no hay temas registrado</td>
+						</tr>
+						}
+					</tbody>
+				</table>
+
+				<table class="table table-striped table-hover ">
+				  <h3 class="tabla">Asistencia</h3>
+				  <thead>
+				    <tr>
+				      <th>Cedula</th>
+				      <th>Nombre</th>
+				      <th>Apellido</th>
+				      <th>Email</th>
+				      <th>estado</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+		
+				   
+		@if( reu.asistencia.size()!=0){	  
+
+			@for(persona <- todos){
+			 	<tr>  
+				      <td>@persona.cedula</td>
+				      <td>@persona.nombre</td>
+				      <td>@persona.apellidos</td>
+				      <td>@persona.correo</td>
+				  @if(reu.asistencia.contains(persona)){
+				      <th style="color:green">Asistio</th>
+				    }else{
+				    <th style="color:red">no Asistio</th>
+				    }
+				</tr>
+			}
+				   
+		} 
+
+				@if((reu.miembro.cod_G==Integer.parseInt(session.get("cod_G")) || session.get("nivel_A")!="Normal") && reu.asistencia.size()==0){
+				<tr>
+				<td><a href="@routes.proyectos_Controlador.MostrarAsistencia(reu.n_Reunion,2)" class="btn btn-primary btn-xs">Cargar Asistencia</a> </td>
+				</tr>
+						}else{
+                  @if(reu.asistencia.size()==0){
+				<td>No se ha cargado la Asistencia todavia</td>
+				}
+				}
+				  </tbody>
+				</table> 
+
+	</div>
+		
+</body>
+}

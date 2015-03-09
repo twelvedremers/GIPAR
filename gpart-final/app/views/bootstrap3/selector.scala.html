@@ -1,0 +1,20 @@
+@(field: Field,opciones:List[String],todos:Boolean = true)
+
+  <div class="form-group @if(field.hasErrors) {has-error}">
+   
+      <select
+        class="form-control"
+        id="@field.id"
+        name="@field.name"
+        <option id="todos" value="todos">
+        @for(optionName <- opciones) {
+          <option id="@optionName" value="@optionName">@optionName</option>
+        }
+        @if(todos) {<option id="todos" value="todos">TODOS</option>}
+      </select>
+         
+          
+
+
+  </div>
+

@@ -1,0 +1,80 @@
+ @(formulario:Form[Login],persona:Miembro)
+
+@import helper._
+@import bootstrap3._
+@import views.html.include._
+
+@main("Modificar miembro",0){
+	<body class="perfil">
+	
+	<div class="editar-perfil">
+		<div class="izq-perfil">
+			@if(persona.foto_url==null){
+					<img class="img-thumbnail tamanio" src="@routes.Assets.at("images/robot19-gipar-der.png")" alt="">
+					} else{
+                     <img class="img-thumbnail tamanio" src="@routes.Assets.at(persona.foto_url)" alt="">
+                     }
+		</div>
+
+		<div class="der-perfil">
+
+			<form action="" method="post">
+            @form(routes.Normal.ModificarPersonal(2) , 'enctype -> "multipart/form-data") {
+
+            }
+
+			  <div class="form-group">
+			  @form(routes.Normal.ModificarDatos(persona.cod_G) , 'enctype -> "multipart/form-data") {
+				  <div class="usuario">
+				  <br><br>
+				  		<h4 style="text-align: center"><b>Datos de Usuario</b></h4>
+					    <label>Nombre de Usuario</label>
+	                    @text(formulario("usuario"),placeholder = "username",false)
+					    <label>Contraseña actual</label>
+					    @password2(formulario("contraseña_act"),placeholder = "contraseña Actual")
+					    <label>Nueva contraseña</label>
+					    @password2(formulario("contraseña_new"),placeholder = "contraseña Nueva")
+					    <label>foto de perfil</label>
+                        <input type="file" name="foto_perfil" accept="image/jpg, image/png">
+                        <br>
+                        <br>
+					    <div class="boton-bot"><button type="DateField" class="btn btn-primary btn-block">modificar</button></div>
+				   </div>
+				   	}
+
+				 @form(routes.Normal.ModificarPersonal(persona.cod_G)) {
+				   <div class="datos-personales">
+				   		<h4 style="text-align: center;"><b>Datos Personales</b></h4>
+					    <label>Nombre</label>
+					    @text(formulario("nombre"),placeholder = "nombre",false)
+					    <label>Apellido</label>
+					    @text(formulario("apellidos"),placeholder = "apellidos",false)
+
+                        @if(Profesor.EsProfesor(persona)){
+					    <label>Area de especialidad</label>
+					    @text(formulario("area"),placeholder = "Area de especialidad",false)
+					    }
+
+					     @if(Egresados.EsEgresado(persona)){
+					      <label>Area de especialidad</label>
+					    @text(formulario("area2"),placeholder = "Area de especialidad",false)
+					    <label>ocupacion</label>
+					    @text(formulario("ocupacion"),placeholder = "ocupacion",false)
+					    }
+
+					    @if(Estudiante.EsEstudiante(persona)){
+					    <label>semestre</label>
+					    @select2(formulario("semestre"))
+					    }
+					    <br>
+					     <div class="boton-bot"><button type="DateField" class="btn btn-primary btn-block">modificar</button></div>
+				    </div>
+					}
+			 
+			  </div>
+			</form>	
+		</div>
+	</div>
+</body>
+
+}

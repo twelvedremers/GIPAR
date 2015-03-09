@@ -1,0 +1,174 @@
+@(proyecto:Proyecto,lista:List[Recursos],lista2:List[Miembro],lista3:List[Programacion],lista4:List[Reconocimiento])
+
+
+@import views.html.include._
+
+@main("Descripcion_proyecto",4){
+  <body class="perfil">
+  <!-- Barra de Navegacion-->
+
+
+    <!--  programa           -->
+<div class="contenedor-de-proyectos">
+   <div class="texto">
+		<h3>Titulo: <b> @proyecto.nombre</b></h3><br><br>
+		<h3>Estado:  <span style="color:@proyecto.C_estado()">@proyecto.estado</span></h3><br><br>
+		<h3>Area:  </h3>
+		<h4>@proyecto.area </h4><br><br>
+		<h3>Descripcion: </h3><br>
+		<h4>@proyecto.descripcion</h4><br><br>
+
+
+		<h3>Recursos: </h3>
+
+
+<!--parte donde se cargan todos los recursos-->
+		<ul>
+		@for(recursos <- lista){
+
+        <li>@recursos.recurso.recurso</li>
+                               }
+                         </ul> 
+         @if(lista4.size()!=0){
+
+        <h3>Reconocimientos:</h3>
+
+<!--parte donde se cargan todos los reconocimientos-->
+		<ul>
+		@for(premio <- lista4){
+
+        <li>@premio.premio</li>
+                               }
+                         </ul> 
+         }
+
+<!--parte donde se muestra el coridnador-->
+		<h3>Coordinador: </h3>
+        <h4><b>@proyecto.coordinador.nombreCompleto()</b> </h4><br><br>
+
+<!--parte donde se muestra la fecha planificada del proyecto solo para cordinadores-->
+
+		@if(session.get("nivel_A")!="Normal"){
+		<h3>Fecha Planificada: </h3>
+		<h4><b>@proyecto.getEstimado()</b> </h4>
+}
+
+		<br>
+</div>
+
+
+
+<!--Se carga la tabla de miembros-->
+
+		<table class="table table-striped table-hover ">
+		  <h3 class="tabla"><b>Miembros</b></h3>
+		 
+		  <thead>
+		    <tr>
+		      <th>Nombre</th>
+		      <th>Apellido</th>
+		      <th>Email </th>
+
+		      @if(session.get("nivel_A")!="Normal" && proyecto.C_estado()!="red"){
+              	 <th>Opciones</th>
+		      }
+
+			</tr>
+
+		  </thead>
+		  <tbody>
+
+			@for(persona <- lista2){
+		     
+			     <tr>
+		              <td>@persona.nombreS()</td>
+				      <td>@persona.apellidos</td>
+				      <td>@persona.correo</td>
+
+				       @if((session.get("nivel_A")!="Normal" || proyecto.coordinador.cod_G==Integer.parseInt(session.get("cod_G"))) && proyecto.C_estado()!="red"){
+				      <td>  <a href="@routes.proyectos_Controlador.borrarPM(proyecto.id,persona.cod_G)"  class="btn btn-danger btn-xs">Eliminar</a></td>}
+			     <tr>
+   			 }	            
+		   
+		  </tbody>
+		</table> 
+
+		
+
+
+
+	     @if(lista2.size()==0 && session.get("nivel_A")=="Normal"){<p class="text-center">Este proyecto no tiene miembros actualmente</p>}
+		
+        
+
+<!--           Se carga la tabla de planificacion              -->
+	<table class="table table-striped table-hover " style="margin-bottom:2%">
+		  <h3 class="tabla"><b>Planificacion</b></h3>
+		  <br>
+		  <thead>
+		    <tr>
+		      
+		      <th>N°</th>
+		      <th>Actividad</th>
+		      <th>Desde</th>
+		      <th>Hasta</th>
+		      <th>Encargado</th>
+		      <th>Estado</th>
+		      @if(session.get("nivel_A")!="Normal" && proyecto.C_estado()!="red"){
+               <th>Opciones</th>
+		      }
+		    </tr>
+		  </thead>
+		  <tbody>
+	   			 
+		     
+		    @for(programa <- lista3){
+
+		   
+		     <tr>
+		              <td>@programa.clave.id_programacion</td>
+				      <td>@programa.actividad</td>
+				      <td>@programa.getProgramacionI()</td>
+				      <td>@programa.getProgramacionF()</td>
+				      <td>@programa.encargado.nombreCompleto()</td>
+				      @if(programa.fecha_Real==null){ <td style="color:red">no completado</td>}else{
+		              <td style="color:green">completado</td>}
+
+					 @if((session.get("nivel_A")!="Normal" || proyecto.coordinador.cod_G==Integer.parseInt(session.get("cod_G"))) && proyecto.C_estado()!="red"){
+                     @if(programa.fecha_Real==null){
+				      <td> <a href="@routes.proyectos_Controlador.borrarPP(proyecto.id,programa.clave.id_programacion)" class="btn btn-danger btn-xs">Eliminar</a></td>
+				      <td><a href="@routes.proyectos_Controlador.actualizar(proyecto.id,programa.clave.id_programacion)" class="btn btn-primary btn-xs">actualizar</a></td>
+				      }else{
+				      <td>  </td>
+				      <td>  </td>
+				      }
+					}
+ 
+		     </tr>
+            }    
+		                      		   
+		  </tbody>
+  </table> 
+
+
+       @if(lista3.size()==0 && (session.get("nivel_A")=="Normal" || proyecto.C_estado()=="red")){<p class="text-center">Este proyecto no tiene planificacion actualmente</p>}
+		
+
+		 <br> 
+		  @if(session.get("nivel_A")=="Administrador" || proyecto.coordinador.cod_G==Integer.parseInt(session.get("cod_G"))){
+
+		  @if(proyecto.C_estado()!="red"){
+		<div class="centrar-boton">
+		 <a href="@routes.proyectos_Controlador.MostrarAsistencia(proyecto.id,3)" class="btn btn-primary btn-xs ">Finalizar Proyecto</a>
+		 }
+		 <a href="@routes.proyectos_Controlador.borrarP(proyecto.id)" class="btn btn-danger btn-xs">Borrar Proyecto</a>
+
+		 </div>
+		}
+
+
+</div>
+    
+</body>
+
+}

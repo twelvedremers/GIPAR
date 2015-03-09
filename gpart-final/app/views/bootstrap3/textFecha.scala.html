@@ -1,0 +1,13 @@
+@(field: Field,obligatorio:Boolean = true)
+   
+
+      <input type="date" 
+             class="form-control clase_tiempo" 
+             id="@field.id" 
+             name="@field.name" 
+             value="@field.value.getOrElse("")"
+              @if(obligatorio) {required=""}  />
+              <span class="help-block">@{field.error.map { error => error.message }}</span>
+
+
+

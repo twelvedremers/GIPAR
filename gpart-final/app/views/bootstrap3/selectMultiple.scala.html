@@ -1,0 +1,14 @@
+@(field: Field, optionMap: Map[String, String], isMultiple: Boolean)
+
+  <div class="form-group @if(field.hasErrors) {has-error}">
+      <select
+        id="ms"
+        requiered
+        name="@if(isMultiple) {@(field.name + "[]")} else {@field.name}"
+        @if(isMultiple) {multiple="multiple"}>
+        @if(!isMultiple) {<option class="blank" value="">selecciona un persona</option>}
+        @for((optionName, cedula) <- optionMap) {
+          <option id="@optionName" value="@cedula">@optionName</option>
+        }
+      </select>
+  </div>

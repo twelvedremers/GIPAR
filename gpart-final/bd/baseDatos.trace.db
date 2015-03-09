@@ -1,0 +1,2181 @@
+02-06 23:26:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "PLAY_EVOLUTIONS" no encontrada
+Table "PLAY_EVOLUTIONS" not found; SQL statement:
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%' [42102-175]
+02-06 23:28:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ""PUBLIC"".""RECURSOS""
+VALUES( '6 laptos',1),('6 laptos',2),( 'bus universitario',6),( '6 laptos',4),( '6 laptos',3),( '6 laptos',8),( '2 arduinos',1),( '2 arduinos',2),( '2 arduinos',3),( '2 arduinos',4),( '6 laptos',5),( '6 laptos',6),( '6 laptos',7),( 'bus universitario',5),
+( '50 platos comida',1),( '50 platos comida',2),( '50 platos comida',7),( '50 platos comida',6),( '50 platos comida',5),( '5 software licenciados ',4),('5 software licenciados ',3),( '1000 bs.f',4),( '500 bs.f',2),( '500 bs.f',3),( '2000 bs.f',1),( '2000 bs.f',5),( '300 bs.f',6),( '3000 bs.f',7)
+
+
+
+
+INSERT[*] INTO ""PUBLIC"".""ASISTENCIA_PROYECTO"" VALUES(7,1,1),(5,1,1),(2,1,1),(7,3,1),(5,3,1),(4,3,1),(3,3,1),(7,4,1),(6,4,1),(2,4,1)"
+Syntax error in SQL statement "INSERT INTO ""PUBLIC"".""RECURSOS""
+VALUES( '6 laptos',1),('6 laptos',2),( 'bus universitario',6),( '6 laptos',4),( '6 laptos',3),( '6 laptos',8),( '2 arduinos',1),( '2 arduinos',2),( '2 arduinos',3),( '2 arduinos',4),( '6 laptos',5),( '6 laptos',6),( '6 laptos',7),( 'bus universitario',5),
+( '50 platos comida',1),( '50 platos comida',2),( '50 platos comida',7),( '50 platos comida',6),( '50 platos comida',5),( '5 software licenciados ',4),('5 software licenciados ',3),( '1000 bs.f',4),( '500 bs.f',2),( '500 bs.f',3),( '2000 bs.f',1),( '2000 bs.f',5),( '300 bs.f',6),( '3000 bs.f',7)
+
+
+
+
+INSERT[*] INTO ""PUBLIC"".""ASISTENCIA_PROYECTO"" VALUES(7,1,1),(5,1,1),(2,1,1),(7,3,1),(5,3,1),(4,3,1),(3,3,1),(7,4,1),(6,4,1),(2,4,1)"; SQL statement:
+INSERT INTO "PUBLIC"."RECURSOS"
+VALUES( '6 laptos',1),('6 laptos',2),( 'bus universitario',6),( '6 laptos',4),( '6 laptos',3),( '6 laptos',8),( '2 arduinos',1),( '2 arduinos',2),( '2 arduinos',3),( '2 arduinos',4),( '6 laptos',5),( '6 laptos',6),( '6 laptos',7),( 'bus universitario',5),
+( '50 platos comida',1),( '50 platos comida',2),( '50 platos comida',7),( '50 platos comida',6),( '50 platos comida',5),( '5 software licenciados ',4),('5 software licenciados ',3),( '1000 bs.f',4),( '500 bs.f',2),( '500 bs.f',3),( '2000 bs.f',1),( '2000 bs.f',5),( '300 bs.f',6),( '3000 bs.f',7)
+
+
+
+
+INSERT INTO "PUBLIC"."ASISTENCIA_PROYECTO" VALUES(7,1,1),(5,1,1),(2,1,1),(7,3,1),(5,3,1),(4,3,1),(3,3,1),(7,4,1),(6,4,1),(2,4,1) [42000-175]
+02-07 19:33:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Columna "ID_EVENTO" no encontrada
+Column "ID_EVENTO" not found; SQL statement:
+select t0.recurso c0, t0.proyecto_id c1, t0.proyecto_id c2 from recursos t0 where id_Evento = ?  [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.expression.Comparison.optimize(Comparison.java:177)
+	at org.h2.command.dml.Select.prepare(Select.java:813)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:70)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:267)
+	at com.jolbox.bonecp.ConnectionHandle.prepareStatement(ConnectionHandle.java:1024)
+	at com.avaje.ebeaninternal.server.query.CQuery.prepareBindExecuteQueryWithOption(CQuery.java:391)
+	at com.avaje.ebeaninternal.server.query.CQuery.prepareBindExecuteQuery(CQuery.java:368)
+	at com.avaje.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:165)
+	at com.avaje.ebeaninternal.server.query.DefaultOrmQueryEngine.findMany(DefaultOrmQueryEngine.java:77)
+	at com.avaje.ebeaninternal.server.core.OrmQueryRequest.findList(OrmQueryRequest.java:263)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.findList(DefaultServer.java:1502)
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.findList(DefaultOrmQuery.java:890)
+	at com.avaje.ebeaninternal.util.DefaultExpressionList.findList(DefaultExpressionList.java:173)
+	at controllers.proyectos_Controlador.VerE(proyectos_Controlador.java:50)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(routes_routing.scala:223)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(routes_routing.scala:223)
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264)
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55)
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82)
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40)
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46)
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32)
+	at scala.concurrent.impl.Future$.apply(Future.scala:31)
+	at scala.concurrent.Future$.apply(Future.scala:492)
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82)
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128)
+	at scala.Option.map(Option.scala:145)
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128)
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121)
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483)
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+02-07 19:33:54 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Columna "ID_EVENTO" no encontrada
+Column "ID_EVENTO" not found; SQL statement:
+select t0.recurso c0, t0.proyecto_id c1, t0.proyecto_id c2 from recursos t0 where id_Evento = ?  [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.expression.Comparison.optimize(Comparison.java:177)
+	at org.h2.command.dml.Select.prepare(Select.java:813)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:70)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:267)
+	at com.jolbox.bonecp.ConnectionHandle.prepareStatement(ConnectionHandle.java:1024)
+	at com.avaje.ebeaninternal.server.query.CQuery.prepareBindExecuteQueryWithOption(CQuery.java:391)
+	at com.avaje.ebeaninternal.server.query.CQuery.prepareBindExecuteQuery(CQuery.java:368)
+	at com.avaje.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:165)
+	at com.avaje.ebeaninternal.server.query.DefaultOrmQueryEngine.findMany(DefaultOrmQueryEngine.java:77)
+	at com.avaje.ebeaninternal.server.core.OrmQueryRequest.findList(OrmQueryRequest.java:263)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.findList(DefaultServer.java:1502)
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.findList(DefaultOrmQuery.java:890)
+	at com.avaje.ebeaninternal.util.DefaultExpressionList.findList(DefaultExpressionList.java:173)
+	at controllers.proyectos_Controlador.VerE(proyectos_Controlador.java:50)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(routes_routing.scala:223)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(routes_routing.scala:223)
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264)
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55)
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82)
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40)
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46)
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32)
+	at scala.concurrent.impl.Future$.apply(Future.scala:31)
+	at scala.concurrent.Future$.apply(Future.scala:492)
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82)
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128)
+	at scala.Option.map(Option.scala:145)
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128)
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121)
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483)
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+02-07 19:40:14 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Columna "ID_EVENTO" no encontrada
+Column "ID_EVENTO" not found; SQL statement:
+select t0.recurso c0, t0.proyecto_id c1, t0.proyecto_id c2 from recursos t0 where id_Evento = ?  [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.expression.Comparison.optimize(Comparison.java:177)
+	at org.h2.command.dml.Select.prepare(Select.java:813)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:70)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:267)
+	at com.jolbox.bonecp.ConnectionHandle.prepareStatement(ConnectionHandle.java:1024)
+	at com.avaje.ebeaninternal.server.query.CQuery.prepareBindExecuteQueryWithOption(CQuery.java:391)
+	at com.avaje.ebeaninternal.server.query.CQuery.prepareBindExecuteQuery(CQuery.java:368)
+	at com.avaje.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:165)
+	at com.avaje.ebeaninternal.server.query.DefaultOrmQueryEngine.findMany(DefaultOrmQueryEngine.java:77)
+	at com.avaje.ebeaninternal.server.core.OrmQueryRequest.findList(OrmQueryRequest.java:263)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.findList(DefaultServer.java:1502)
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.findList(DefaultOrmQuery.java:890)
+	at com.avaje.ebeaninternal.util.DefaultExpressionList.findList(DefaultExpressionList.java:173)
+	at controllers.proyectos_Controlador.VerE(proyectos_Controlador.java:50)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(routes_routing.scala:223)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.apply(routes_routing.scala:223)
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264)
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55)
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82)
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40)
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46)
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32)
+	at scala.concurrent.impl.Future$.apply(Future.scala:31)
+	at scala.concurrent.Future$.apply(Future.scala:492)
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82)
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128)
+	at scala.Option.map(Option.scala:145)
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128)
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121)
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483)
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+02-07 22:33:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla " RECONOCIMIENTO" no encontrada
+Table " RECONOCIMIENTO" not found; SQL statement:
+INSERT INTO "PUBLIC"." RECONOCIMIENTO"
+VALUES( 'reconocimiento por parte de CANTV',4),('Reportaje en Nueva Prensa acerca del evento',4),( '1° lugar en competencia inter universidad guayana',2) [42102-175]
+02-07 22:54:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Columna "CURRENT_DATESTAMP" no encontrada
+Column "CURRENT_DATESTAMP" not found; SQL statement:
+select current_datestamp [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:810)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-07 23:11:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Columna "montado de de pista para pruebas del robot" no encontrada
+Column "montado de de pista para pruebas del robot" not found; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES(1, 1, '2015-02-04 14:00:00.00' , '2015-02-04 20:00:00.00' , '2015-02-04 14:00:00.00' , 'reunion para planificacion de proyecto' , 2 ),(2, 1, '2015-02-12 16:00:00.00' , '2015-02-20 16:00:00.00' , '2015-02-20 16:00:00.00','desarrollo del controlador y de la arquitectura del robot' , 5),(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , null, "montado de de pista para pruebas del robot" , 2),(4, 1 , '2015-03-11 16:00:00.00' , '2015-03-12 16:00:00.00'  , null , "presentacion del prototipo del robot" ,7 ),(5, 1 , '2014-04-01 11:21:57.566' , '2014-04-02 11:21:57.566' ,null  , "presentacion del robot en evento de promocion y finalizacion del proyecto" , 5) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-07 23:12:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Columna "montado de de pista para pruebas del robot" no encontrada
+Column "montado de de pista para pruebas del robot" not found; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , null, "montado de de pista para pruebas del robot" , 2) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-07 23:33:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:00:00.00"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:00:00.00"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-30 16:00:00.00'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3), -- row #2 (2, 3, '2015-01-21 16:00:00.00', '2015-02-30 16:00:00.00', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-07 23:34:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:00:00.00"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:00:00.00"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.10' ,'2015-02-30 16:00:00.00'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3), -- row #2 (2, 3, '2015-01-21 16:00:00.10', '2015-02-30 16:00:00.00', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-07 23:34:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:00:00.00"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:00:00.00"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.10' ,'2015-02-30 16:00:00.00'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.10' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3), -- row #2 (2, 3, '2015-01-21 16:00:00.10', '2015-02-30 16:00:00.00', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-07 23:34:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:00:00.00"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:00:00.00"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:03:02.10' ,'2015-02-30 16:00:00.00'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:01:20.10' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3), -- row #2 (2, 3, '2015-01-21 16:03:02.10', '2015-02-30 16:00:00.00', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-07 23:34:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:00:00.00"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:00:00.00"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:03:02.10' ,'2015-02-30 16:00:00.00'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:01:20.10' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3), -- row #2 (2, 3, '2015-01-21 16:03:02.10', '2015-02-30 16:00:00.00', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-07 23:34:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:00:00.00"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:00:00.00"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:03:02.10' ,'2015-02-30 16:00:00.00'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:01:20.10' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3), -- row #2 (2, 3, '2015-01-21 16:03:02.10', '2015-02-30 16:00:00.00', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-07 23:35:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:02:10.20"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:02:10.20"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:03:02.10' ,'2015-02-30 16:02:10.20'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:01:20.10' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3), -- row #2 (2, 3, '2015-01-21 16:03:02.10', '2015-02-30 16:02:10.20', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-07 23:35:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:02:10.20"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:02:10.20"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:03:02.10' ,'2015-02-30 16:02:10.20'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:01:20.10' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3), -- row #2 (2, 3, '2015-01-21 16:03:02.10', '2015-02-30 16:02:10.20', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-07 23:36:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ""PUBLIC"".""PROGRAMACION""
+VALUES
+,[*](2, 3, '2015-01-21 16:03:02.10' ,'2015-02-30 16:02:10.20'  , NULL , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:01:20.10' ,  '2014-03-10 11:21:57.566',NULL  , 'presentacion de prototipo del robot ' , 3), "; se esperaba "("
+Syntax error in SQL statement "INSERT INTO ""PUBLIC"".""PROGRAMACION""
+VALUES
+,[*](2, 3, '2015-01-21 16:03:02.10' ,'2015-02-30 16:02:10.20'  , NULL , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:01:20.10' ,  '2014-03-10 11:21:57.566',NULL  , 'presentacion de prototipo del robot ' , 3), "; expected "("; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES
+,(2, 3, '2015-01-21 16:03:02.10' ,'2015-02-30 16:02:10.20'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:01:20.10' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3), [42001-175]
+02-07 23:36:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ""PUBLIC"".""PROGRAMACION""
+VALUES
+,[*](2, 3, '2015-01-21 16:03:02.10' ,'2015-02-30 16:02:10.20'  , NULL , 'desarrollo del robot ' , 4) "; se esperaba "("
+Syntax error in SQL statement "INSERT INTO ""PUBLIC"".""PROGRAMACION""
+VALUES
+,[*](2, 3, '2015-01-21 16:03:02.10' ,'2015-02-30 16:02:10.20'  , NULL , 'desarrollo del robot ' , 4) "; expected "("; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES
+,(2, 3, '2015-01-21 16:03:02.10' ,'2015-02-30 16:02:10.20'  , null , 'desarrollo del robot ' , 4) [42001-175]
+02-07 23:36:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ""PUBLIC"".""PROGRAMACION""
+VALUES
+,[*](2, 3, '2015-01-21 16:03:02.10' ,'2015-02-20 16:02:10.20'  , NULL , 'desarrollo del robot ' , 4) "; se esperaba "("
+Syntax error in SQL statement "INSERT INTO ""PUBLIC"".""PROGRAMACION""
+VALUES
+,[*](2, 3, '2015-01-21 16:03:02.10' ,'2015-02-20 16:02:10.20'  , NULL , 'desarrollo del robot ' , 4) "; expected "("; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES
+,(2, 3, '2015-01-21 16:03:02.10' ,'2015-02-20 16:02:10.20'  , null , 'desarrollo del robot ' , 4) [42001-175]
+02-07 23:36:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ""PUBLIC"".""PROGRAMACION""
+VALUES
+,[*](2, 3, '2015-01-21 16:03:02.10' ,'2015-02-20 16:02:10.20'  , NULL , 'desarrollo del robot ' , 4) "; se esperaba "("
+Syntax error in SQL statement "INSERT INTO ""PUBLIC"".""PROGRAMACION""
+VALUES
+,[*](2, 3, '2015-01-21 16:03:02.10' ,'2015-02-20 16:02:10.20'  , NULL , 'desarrollo del robot ' , 4) "; expected "("; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES
+,(2, 3, '2015-01-21 16:03:02.10' ,'2015-02-20 16:02:10.20'  , null , 'desarrollo del robot ' , 4) [42001-175]
+02-07 23:36:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ""PUBLIC"".""PROGRAMACION""
+VALUES
+,[*](2, 3, '2015-01-21 16:03:02.10' ,'2015-02-20 16:02:10.20'  , NULL , 'desarrollo del robot ' , 4) "; se esperaba "("
+Syntax error in SQL statement "INSERT INTO ""PUBLIC"".""PROGRAMACION""
+VALUES
+,[*](2, 3, '2015-01-21 16:03:02.10' ,'2015-02-20 16:02:10.20'  , NULL , 'desarrollo del robot ' , 4) "; expected "("; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES
+,(2, 3, '2015-01-21 16:03:02.10' ,'2015-02-20 16:02:10.20'  , null , 'desarrollo del robot ' , 4) [42001-175]
+02-07 23:41:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Columna "primer dia de evento: traslado incripcion y eventos de programacion" no encontrada
+Column "primer dia de evento: traslado incripcion y eventos de programacion" not found; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , null,"primer dia de evento: traslado incripcion y eventos de programacion" , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , null,"2 dia de evento : competencias " , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', null , "3 dia de evento:entrega de premios y salida" , 4) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-07 23:45:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Columna "primer dia de reparacion del GIPAR" no encontrada
+Column "primer dia de reparacion del GIPAR" not found; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , null , "primer dia de reparacion del GIPAR" ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , null , "segundo dia de reparacion del GIPAR y exteriores" , 2) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-08 12:38:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ""PUBLIC"".""RECURSOS""
+VALUES( '6 laptos',1),('6 laptos',2),( 'bus universitario',6),( '6 laptos',4),( '6 laptos',3),( '6 laptos',8),( '2 arduinos',1),( '2 arduinos',2),( '2 arduinos',3),( '2 arduinos',4),( '6 laptos',5),( '6 laptos',6),( '6 laptos',7),( 'bus universitario',5),
+( '50 platos comida',1),( '50 platos comida',2),( '50 platos comida',7),( '50 platos comida',6),( '50 platos comida',5),( '5 software licenciados ',4),('5 software licenciados ',3),( '1000 bs.f',4),( '500 bs.f',2),( '500 bs.f',3),( '2000 bs.f',1),( '2000 bs.f',5),( '300 bs.f',6),( '3000 bs.f',7)
+
+INSERT[*] INTO ""PUBLIC"".""TELEFONOS""
+VALUES( '02865838071',1),('04243874631',1),( '02869512706',2),( '02866454321',3),( '02866454563',4),('04245632276',5),( '04245839064',6),( '04264958321',7),( '04245634980',4),( '02865424530',7),( '02865334421',3)"
+Syntax error in SQL statement "INSERT INTO ""PUBLIC"".""RECURSOS""
+VALUES( '6 laptos',1),('6 laptos',2),( 'bus universitario',6),( '6 laptos',4),( '6 laptos',3),( '6 laptos',8),( '2 arduinos',1),( '2 arduinos',2),( '2 arduinos',3),( '2 arduinos',4),( '6 laptos',5),( '6 laptos',6),( '6 laptos',7),( 'bus universitario',5),
+( '50 platos comida',1),( '50 platos comida',2),( '50 platos comida',7),( '50 platos comida',6),( '50 platos comida',5),( '5 software licenciados ',4),('5 software licenciados ',3),( '1000 bs.f',4),( '500 bs.f',2),( '500 bs.f',3),( '2000 bs.f',1),( '2000 bs.f',5),( '300 bs.f',6),( '3000 bs.f',7)
+
+INSERT[*] INTO ""PUBLIC"".""TELEFONOS""
+VALUES( '02865838071',1),('04243874631',1),( '02869512706',2),( '02866454321',3),( '02866454563',4),('04245632276',5),( '04245839064',6),( '04264958321',7),( '04245634980',4),( '02865424530',7),( '02865334421',3)"; SQL statement:
+INSERT INTO "PUBLIC"."RECURSOS"
+VALUES( '6 laptos',1),('6 laptos',2),( 'bus universitario',6),( '6 laptos',4),( '6 laptos',3),( '6 laptos',8),( '2 arduinos',1),( '2 arduinos',2),( '2 arduinos',3),( '2 arduinos',4),( '6 laptos',5),( '6 laptos',6),( '6 laptos',7),( 'bus universitario',5),
+( '50 platos comida',1),( '50 platos comida',2),( '50 platos comida',7),( '50 platos comida',6),( '50 platos comida',5),( '5 software licenciados ',4),('5 software licenciados ',3),( '1000 bs.f',4),( '500 bs.f',2),( '500 bs.f',3),( '2000 bs.f',1),( '2000 bs.f',5),( '300 bs.f',6),( '3000 bs.f',7)
+
+INSERT INTO "PUBLIC"."TELEFONOS"
+VALUES( '02865838071',1),('04243874631',1),( '02869512706',2),( '02866454321',3),( '02866454563',4),('04245632276',5),( '04245839064',6),( '04264958321',7),( '04245634980',4),( '02865424530',7),( '02865334421',3) [42000-175]
+02-08 12:38:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ""PUBLIC"".""RECONOCIMIENTO""
+VALUES( 'reconocimiento por parte de CANTV',4),('Reportaje en Nueva Prensa acerca del evento',4),( '1° lugar en competencia inter universidad guayana',2)
+
+INSERT[*] INTO ""PUBLIC"".""PROGRAMACION""
+VALUES(1, 1, '2015-02-04 14:00:00.00' , '2015-02-04 20:00:00.00' , '2015-02-04 14:00:00.00' , 'reunion para planificacion de proyecto' , 2 ),(2, 1, '2015-02-12 16:00:00.00' , '2015-02-20 16:00:00.00' , '2015-02-20 16:00:00.00','desarrollo del controlador y de la arquitectura del robot' , 5),(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , NULL, 'montado de de pista para pruebas del robot' , 2),(4, 1 , '2015-03-11 16:00:00.00' , '2015-03-12 16:00:00.00'  , NULL , 'presentacion del prototipo del robot' ,7 ),(5, 1 , '2014-04-01 11:21:57.566' , '2014-04-02 11:21:57.566' ,NULL  , 'presentacion del robot en evento de promocion y finalizacion del proyecto' , 5),
+(1, 2, '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , 'primer dia del evento-presentacion del SUBA' , 1 ),(2, 2, '2014-01-9 8:21:57.566' , '2014-01-9 11:21:57.566'  , '2014-01-9 8:21:57.566' , 'segundo dia del evento- presentacion de nuevas app' , 3),(3, 2 , '2014-01-10 08:21:57.566' , '2014-01-10 11:21:57.566' , '2014-01-10 8:21:57.566' , 'tercer dia del evento-presentacion de Gipar proyectos' , 5),
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , NULL , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-30 16:00:00.00'  , NULL , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',NULL  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , NULL,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , NULL,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', NULL , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , NULL , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , NULL , 'segundo dia de reparacion del GIPAR y exteriores' , 2) "
+Syntax error in SQL statement "INSERT INTO ""PUBLIC"".""RECONOCIMIENTO""
+VALUES( 'reconocimiento por parte de CANTV',4),('Reportaje en Nueva Prensa acerca del evento',4),( '1° lugar en competencia inter universidad guayana',2)
+
+INSERT[*] INTO ""PUBLIC"".""PROGRAMACION""
+VALUES(1, 1, '2015-02-04 14:00:00.00' , '2015-02-04 20:00:00.00' , '2015-02-04 14:00:00.00' , 'reunion para planificacion de proyecto' , 2 ),(2, 1, '2015-02-12 16:00:00.00' , '2015-02-20 16:00:00.00' , '2015-02-20 16:00:00.00','desarrollo del controlador y de la arquitectura del robot' , 5),(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , NULL, 'montado de de pista para pruebas del robot' , 2),(4, 1 , '2015-03-11 16:00:00.00' , '2015-03-12 16:00:00.00'  , NULL , 'presentacion del prototipo del robot' ,7 ),(5, 1 , '2014-04-01 11:21:57.566' , '2014-04-02 11:21:57.566' ,NULL  , 'presentacion del robot en evento de promocion y finalizacion del proyecto' , 5),
+(1, 2, '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , 'primer dia del evento-presentacion del SUBA' , 1 ),(2, 2, '2014-01-9 8:21:57.566' , '2014-01-9 11:21:57.566'  , '2014-01-9 8:21:57.566' , 'segundo dia del evento- presentacion de nuevas app' , 3),(3, 2 , '2014-01-10 08:21:57.566' , '2014-01-10 11:21:57.566' , '2014-01-10 8:21:57.566' , 'tercer dia del evento-presentacion de Gipar proyectos' , 5),
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , NULL , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-30 16:00:00.00'  , NULL , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',NULL  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , NULL,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , NULL,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', NULL , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , NULL , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , NULL , 'segundo dia de reparacion del GIPAR y exteriores' , 2) "; SQL statement:
+INSERT INTO "PUBLIC"."RECONOCIMIENTO"
+VALUES( 'reconocimiento por parte de CANTV',4),('Reportaje en Nueva Prensa acerca del evento',4),( '1° lugar en competencia inter universidad guayana',2)
+
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES(1, 1, '2015-02-04 14:00:00.00' , '2015-02-04 20:00:00.00' , '2015-02-04 14:00:00.00' , 'reunion para planificacion de proyecto' , 2 ),(2, 1, '2015-02-12 16:00:00.00' , '2015-02-20 16:00:00.00' , '2015-02-20 16:00:00.00','desarrollo del controlador y de la arquitectura del robot' , 5),(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , null, 'montado de de pista para pruebas del robot' , 2),(4, 1 , '2015-03-11 16:00:00.00' , '2015-03-12 16:00:00.00'  , null , 'presentacion del prototipo del robot' ,7 ),(5, 1 , '2014-04-01 11:21:57.566' , '2014-04-02 11:21:57.566' ,null  , 'presentacion del robot en evento de promocion y finalizacion del proyecto' , 5),
+(1, 2, '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , 'primer dia del evento-presentacion del SUBA' , 1 ),(2, 2, '2014-01-9 8:21:57.566' , '2014-01-9 11:21:57.566'  , '2014-01-9 8:21:57.566' , 'segundo dia del evento- presentacion de nuevas app' , 3),(3, 2 , '2014-01-10 08:21:57.566' , '2014-01-10 11:21:57.566' , '2014-01-10 8:21:57.566' , 'tercer dia del evento-presentacion de Gipar proyectos' , 5),
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-30 16:00:00.00'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , null,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , null,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', null , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , null , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , null , 'segundo dia de reparacion del GIPAR y exteriores' , 2) [42000-175]
+02-08 12:38:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:00:00.00"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:00:00.00"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES(1, 1, '2015-02-04 14:00:00.00' , '2015-02-04 20:00:00.00' , '2015-02-04 14:00:00.00' , 'reunion para planificacion de proyecto' , 2 ),(2, 1, '2015-02-12 16:00:00.00' , '2015-02-20 16:00:00.00' , '2015-02-20 16:00:00.00','desarrollo del controlador y de la arquitectura del robot' , 5),(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , null, 'montado de de pista para pruebas del robot' , 2),(4, 1 , '2015-03-11 16:00:00.00' , '2015-03-12 16:00:00.00'  , null , 'presentacion del prototipo del robot' ,7 ),(5, 1 , '2014-04-01 11:21:57.566' , '2014-04-02 11:21:57.566' ,null  , 'presentacion del robot en evento de promocion y finalizacion del proyecto' , 5),
+(1, 2, '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , 'primer dia del evento-presentacion del SUBA' , 1 ),(2, 2, '2014-01-9 8:21:57.566' , '2014-01-9 11:21:57.566'  , '2014-01-9 8:21:57.566' , 'segundo dia del evento- presentacion de nuevas app' , 3),(3, 2 , '2014-01-10 08:21:57.566' , '2014-01-10 11:21:57.566' , '2014-01-10 8:21:57.566' , 'tercer dia del evento-presentacion de Gipar proyectos' , 5),
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-30 16:00:00.00'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , null,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , null,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', null , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , null , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , null , 'segundo dia de reparacion del GIPAR y exteriores' , 2) -- row #10 (2, 3, '2015-01-21 16:00:00.00', '2015-02-30 16:00:00.00', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-08 12:39:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:00:00.00"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:00:00.00"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-30 16:00:00.00'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , null,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , null,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', null , '3 dia de evento:entrega de premios y salida' , 4), -- row #2 (2, 3, '2015-01-21 16:00:00.00', '2015-02-30 16:00:00.00', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-08 12:40:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:00:00.00"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:00:00.00"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-30 16:00:00.00'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:40:20.10' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , null,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , null,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', null , '3 dia de evento:entrega de premios y salida' , 4), -- row #2 (2, 3, '2015-01-21 16:00:00.00', '2015-02-30 16:00:00.00', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-08 12:40:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:30:10.20"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:30:10.20"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:30:20.20' ,'2015-02-30 16:30:10.20'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:40:20.10' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , null,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , null,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', null , '3 dia de evento:entrega de premios y salida' , 4), -- row #2 (2, 3, '2015-01-21 16:30:20.20', '2015-02-30 16:30:10.20', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-08 12:40:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:30:10.20"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:30:10.20"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:30:20.20' ,'2015-02-30 16:30:10.20'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:40:20.10' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , null,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , null,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', null , '3 dia de evento:entrega de premios y salida' , 4), -- row #2 (2, 3, '2015-01-21 16:30:20.20', '2015-02-30 16:30:10.20', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-08 12:40:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:30:10.20"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:30:10.20"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:30:20.20' ,'2015-02-30 16:30:10.20'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:40:20.10' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3), -- row #2 (2, 3, '2015-01-21 16:30:20.20', '2015-02-30 16:30:10.20', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-08 12:40:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:30:10.20"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:30:10.20"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:30:20.20' ,'2015-02-30 16:30:10.20'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:40:20.10' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3) -- row #2 (2, 3, '2015-01-21 16:30:20.20', '2015-02-30 16:30:10.20', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-08 12:41:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:00:00.00"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:00:00.00"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"  values (1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-30 16:00:00.00'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3), -- row #2 (2, 3, '2015-01-21 16:00:00.00', '2015-02-30 16:00:00.00', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-08 12:41:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:00:00.000"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:00:00.000"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"  values (1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.000' ,'2015-02-30 16:00:00.000'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.000' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3), -- row #2 (2, 3, '2015-01-21 16:00:00.000', '2015-02-30 16:00:00.000', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-08 12:42:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:00:00.01"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:00:00.01"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"  values (1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.01' ,'2015-02-30 16:00:00.01'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.000' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3), -- row #2 (2, 3, '2015-01-21 16:00:00.01', '2015-02-30 16:00:00.01', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-08 12:42:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Imposible interpretar la constante "TIMESTAMP" "2015-02-30 16:00:00.01"
+Cannot parse "TIMESTAMP" constant "2015-02-30 16:00:00.01"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"  values (1, 3, '2014-01-10 11:21:57.56' ,'2014-01-20 11:21:57.56'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.01' ,'2015-02-30 16:00:00.01'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.000' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3), -- row #2 (2, 3, '2015-01-21 16:00:00.01', '2015-02-30 16:00:00.01', NULL, 'desarrollo del robot ', 4) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:87)
+	at org.h2.value.Value.convertTo(Value.java:843)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalArgumentException: 2015-2-30
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:105)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:85)
+	... 15 more
+02-08 12:43:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ""PUBLIC"".""PROGRAMACION""(1[*], 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , NULL,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , NULL,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', NULL , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , NULL , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , NULL , 'segundo dia de reparacion del GIPAR y exteriores' , 2) "; se esperaba "identifier"
+Syntax error in SQL statement "INSERT INTO ""PUBLIC"".""PROGRAMACION""(1[*], 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , NULL,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , NULL,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', NULL , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , NULL , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , NULL , 'segundo dia de reparacion del GIPAR y exteriores' , 2) "; expected "identifier"; SQL statement:
+INSERT INTO "PUBLIC"."PROGRAMACION"(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , null,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , null,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', null , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , null , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , null , 'segundo dia de reparacion del GIPAR y exteriores' , 2) [42001-175]
+02-10 17:37:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "CREATE ASSERTION[*] VALIDO_SEMESTRE CHECK(ESTUDIANTE.SEMESTRE<10) "; se esperaba "OR, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL, GLOBAL, TEMP, TEMPORARY, TABLE, PRIMARY, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE ASSERTION[*] VALIDO_SEMESTRE CHECK(ESTUDIANTE.SEMESTRE<10) "; expected "OR, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL, GLOBAL, TEMP, TEMPORARY, TABLE, PRIMARY, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+create assertion valido_semestre check(estudiante.semestre<10) [42001-175]
+02-10 17:52:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "CREATE ASSERTION[*] VALIDA_SEMESTRES
+  CHECK ((SELECT SEMESTRE FROM ESTUDIANTE) <10 AND (SELECT SEMESTRE FROM ESTUDIANTE)>=0) "; se esperaba "OR, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL, GLOBAL, TEMP, TEMPORARY, TABLE, PRIMARY, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE ASSERTION[*] VALIDA_SEMESTRES
+  CHECK ((SELECT SEMESTRE FROM ESTUDIANTE) <10 AND (SELECT SEMESTRE FROM ESTUDIANTE)>=0) "; expected "OR, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL, GLOBAL, TEMP, TEMPORARY, TABLE, PRIMARY, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE ASSERTION valida_Semestres
+  CHECK ((SELECT semestre FROM estudiante) <10 and (SELECT semestre FROM estudiante)>=0) [42001-175]
+02-10 17:52:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "CREATE ASSERTION[*] VALIDA_SEMESTRES
+  CHECK ((SELECT SEMESTRE FROM ESTUDIANTE) <10 ) "; se esperaba "OR, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL, GLOBAL, TEMP, TEMPORARY, TABLE, PRIMARY, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE ASSERTION[*] VALIDA_SEMESTRES
+  CHECK ((SELECT SEMESTRE FROM ESTUDIANTE) <10 ) "; expected "OR, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL, GLOBAL, TEMP, TEMPORARY, TABLE, PRIMARY, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE ASSERTION valida_Semestres
+  CHECK ((SELECT semestre FROM estudiante) <10 ) [42001-175]
+02-10 17:55:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "TRIGGER[*] "; se esperaba "TRUNCATE, {"
+Syntax error in SQL statement "TRIGGER[*] "; expected "TRUNCATE, {"; SQL statement:
+trigger [42001-175]
+02-14 11:59:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ""PUBLIC"".""RECURSOS""
+VALUES( '6 laptos',1),('6 laptos',2),( 'bus universitario',6),( '6 laptos',4),( '6 laptos',3),( '6 laptos',8),( '2 arduinos',1),( '2 arduinos',2),( '2 arduinos',3),( '2 arduinos',4),( '6 laptos',5),( '6 laptos',6),( '6 laptos',7),( 'bus universitario',5),
+( '50 platos comida',1),( '50 platos comida',2),( '50 platos comida',7),( '50 platos comida',6),( '50 platos comida',5),( '5 software licenciados ',4),('5 software licenciados ',3),( '1000 bs.f',4),( '500 bs.f',2),( '500 bs.f',3),( '2000 bs.f',1),( '2000 bs.f',5),( '300 bs.f',6),( '3000 bs.f',7)
+
+INSERT[*] INTO ""PUBLIC"".""TELEFONOS""
+VALUES( '02865838071',1),('04243874631',1),( '02869512706',2),( '02866454321',3),( '02866454563',4),('04245632276',5),( '04245839064',6),( '04264958321',7),( '04245634980',4),( '02865424530',7),( '02865334421',3)"
+Syntax error in SQL statement "INSERT INTO ""PUBLIC"".""RECURSOS""
+VALUES( '6 laptos',1),('6 laptos',2),( 'bus universitario',6),( '6 laptos',4),( '6 laptos',3),( '6 laptos',8),( '2 arduinos',1),( '2 arduinos',2),( '2 arduinos',3),( '2 arduinos',4),( '6 laptos',5),( '6 laptos',6),( '6 laptos',7),( 'bus universitario',5),
+( '50 platos comida',1),( '50 platos comida',2),( '50 platos comida',7),( '50 platos comida',6),( '50 platos comida',5),( '5 software licenciados ',4),('5 software licenciados ',3),( '1000 bs.f',4),( '500 bs.f',2),( '500 bs.f',3),( '2000 bs.f',1),( '2000 bs.f',5),( '300 bs.f',6),( '3000 bs.f',7)
+
+INSERT[*] INTO ""PUBLIC"".""TELEFONOS""
+VALUES( '02865838071',1),('04243874631',1),( '02869512706',2),( '02866454321',3),( '02866454563',4),('04245632276',5),( '04245839064',6),( '04264958321',7),( '04245634980',4),( '02865424530',7),( '02865334421',3)"; SQL statement:
+INSERT INTO "PUBLIC"."RECURSOS"
+VALUES( '6 laptos',1),('6 laptos',2),( 'bus universitario',6),( '6 laptos',4),( '6 laptos',3),( '6 laptos',8),( '2 arduinos',1),( '2 arduinos',2),( '2 arduinos',3),( '2 arduinos',4),( '6 laptos',5),( '6 laptos',6),( '6 laptos',7),( 'bus universitario',5),
+( '50 platos comida',1),( '50 platos comida',2),( '50 platos comida',7),( '50 platos comida',6),( '50 platos comida',5),( '5 software licenciados ',4),('5 software licenciados ',3),( '1000 bs.f',4),( '500 bs.f',2),( '500 bs.f',3),( '2000 bs.f',1),( '2000 bs.f',5),( '300 bs.f',6),( '3000 bs.f',7)
+
+INSERT INTO "PUBLIC"."TELEFONOS"
+VALUES( '02865838071',1),('04243874631',1),( '02869512706',2),( '02866454321',3),( '02866454563',4),('04245632276',5),( '04245839064',6),( '04264958321',7),( '04245634980',4),( '02865424530',7),( '02865334421',3) [42000-175]
+02-14 11:59:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ""PUBLIC"".""RECONOCIMIENTO""
+VALUES( 'reconocimiento por parte de CANTV',4),('Reportaje en Nueva Prensa acerca del evento',4),( '1° lugar en competencia inter universidad guayana',2)
+
+INSERT[*] INTO ""PUBLIC"".""PROGRAMACION""
+VALUES(1, 1, '2015-02-04 14:00:00.00' , '2015-02-04 20:00:00.00' , '2015-02-04 14:00:00.00' , 'reunion para planificacion de proyecto' , 2 ),(2, 1, '2015-02-12 16:00:00.00' , '2015-02-20 16:00:00.00' , '2015-02-20 16:00:00.00','desarrollo del controlador y de la arquitectura del robot' , 5),(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , NULL, 'montado de de pista para pruebas del robot' , 2),(4, 1 , '2015-03-11 16:00:00.00' , '2015-03-12 16:00:00.00'  , NULL , 'presentacion del prototipo del robot' ,7 ),(5, 1 , '2014-04-01 11:21:57.566' , '2014-04-02 11:21:57.566' ,NULL  , 'presentacion del robot en evento de promocion y finalizacion del proyecto' , 5),
+(1, 2, '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , 'primer dia del evento-presentacion del SUBA' , 1 ),(2, 2, '2014-01-9 8:21:57.566' , '2014-01-9 11:21:57.566'  , '2014-01-9 8:21:57.566' , 'segundo dia del evento- presentacion de nuevas app' , 3),(3, 2 , '2014-01-10 08:21:57.566' , '2014-01-10 11:21:57.566' , '2014-01-10 8:21:57.566' , 'tercer dia del evento-presentacion de Gipar proyectos' , 5),
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , NULL , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-20 16:00:00.00'  , NULL , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',NULL  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , NULL,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , NULL,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', NULL , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , NULL , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , NULL , 'segundo dia de reparacion del GIPAR y exteriores' , 2) "
+Syntax error in SQL statement "INSERT INTO ""PUBLIC"".""RECONOCIMIENTO""
+VALUES( 'reconocimiento por parte de CANTV',4),('Reportaje en Nueva Prensa acerca del evento',4),( '1° lugar en competencia inter universidad guayana',2)
+
+INSERT[*] INTO ""PUBLIC"".""PROGRAMACION""
+VALUES(1, 1, '2015-02-04 14:00:00.00' , '2015-02-04 20:00:00.00' , '2015-02-04 14:00:00.00' , 'reunion para planificacion de proyecto' , 2 ),(2, 1, '2015-02-12 16:00:00.00' , '2015-02-20 16:00:00.00' , '2015-02-20 16:00:00.00','desarrollo del controlador y de la arquitectura del robot' , 5),(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , NULL, 'montado de de pista para pruebas del robot' , 2),(4, 1 , '2015-03-11 16:00:00.00' , '2015-03-12 16:00:00.00'  , NULL , 'presentacion del prototipo del robot' ,7 ),(5, 1 , '2014-04-01 11:21:57.566' , '2014-04-02 11:21:57.566' ,NULL  , 'presentacion del robot en evento de promocion y finalizacion del proyecto' , 5),
+(1, 2, '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , 'primer dia del evento-presentacion del SUBA' , 1 ),(2, 2, '2014-01-9 8:21:57.566' , '2014-01-9 11:21:57.566'  , '2014-01-9 8:21:57.566' , 'segundo dia del evento- presentacion de nuevas app' , 3),(3, 2 , '2014-01-10 08:21:57.566' , '2014-01-10 11:21:57.566' , '2014-01-10 8:21:57.566' , 'tercer dia del evento-presentacion de Gipar proyectos' , 5),
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , NULL , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-20 16:00:00.00'  , NULL , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',NULL  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , NULL,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , NULL,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', NULL , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , NULL , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , NULL , 'segundo dia de reparacion del GIPAR y exteriores' , 2) "; SQL statement:
+INSERT INTO "PUBLIC"."RECONOCIMIENTO"
+VALUES( 'reconocimiento por parte de CANTV',4),('Reportaje en Nueva Prensa acerca del evento',4),( '1° lugar en competencia inter universidad guayana',2)
+
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES(1, 1, '2015-02-04 14:00:00.00' , '2015-02-04 20:00:00.00' , '2015-02-04 14:00:00.00' , 'reunion para planificacion de proyecto' , 2 ),(2, 1, '2015-02-12 16:00:00.00' , '2015-02-20 16:00:00.00' , '2015-02-20 16:00:00.00','desarrollo del controlador y de la arquitectura del robot' , 5),(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , null, 'montado de de pista para pruebas del robot' , 2),(4, 1 , '2015-03-11 16:00:00.00' , '2015-03-12 16:00:00.00'  , null , 'presentacion del prototipo del robot' ,7 ),(5, 1 , '2014-04-01 11:21:57.566' , '2014-04-02 11:21:57.566' ,null  , 'presentacion del robot en evento de promocion y finalizacion del proyecto' , 5),
+(1, 2, '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , 'primer dia del evento-presentacion del SUBA' , 1 ),(2, 2, '2014-01-9 8:21:57.566' , '2014-01-9 11:21:57.566'  , '2014-01-9 8:21:57.566' , 'segundo dia del evento- presentacion de nuevas app' , 3),(3, 2 , '2014-01-10 08:21:57.566' , '2014-01-10 11:21:57.566' , '2014-01-10 8:21:57.566' , 'tercer dia del evento-presentacion de Gipar proyectos' , 5),
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-20 16:00:00.00'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , null,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , null,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', null , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , null , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , null , 'segundo dia de reparacion del GIPAR y exteriores' , 2) [42000-175]
+02-14 11:59:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ASISTENCIA_EVENTO VALUES (1 ,2,'promocion'), (2 ,2,'promocion'),(4 ,2,'desarrollador'),(5 ,2,'desarrollador'),
+( 1,5,'acompañante'), (2 ,5,'acompañante'),(4 ,5,'participante'),(5 ,5,'participante'),
+( 3,6,'acompañante'), (2 ,6,'trasporte'),(7 ,6,'ponente'),(5 ,6,'ponente'),
+( 7,7,'limpieza de las computadoras'), (6 ,7,'pintura'),(5 ,7,'trasporte'),(4 ,7,'pintura'),(3 ,7,'mantenimiento'),
+
+INSERT[*] INTO ""PUBLIC"".""DIAS_REUNION_ACTUALES"" VALUES(""Lun"",15) "
+Syntax error in SQL statement "INSERT INTO ASISTENCIA_EVENTO VALUES (1 ,2,'promocion'), (2 ,2,'promocion'),(4 ,2,'desarrollador'),(5 ,2,'desarrollador'),
+( 1,5,'acompañante'), (2 ,5,'acompañante'),(4 ,5,'participante'),(5 ,5,'participante'),
+( 3,6,'acompañante'), (2 ,6,'trasporte'),(7 ,6,'ponente'),(5 ,6,'ponente'),
+( 7,7,'limpieza de las computadoras'), (6 ,7,'pintura'),(5 ,7,'trasporte'),(4 ,7,'pintura'),(3 ,7,'mantenimiento'),
+
+INSERT[*] INTO ""PUBLIC"".""DIAS_REUNION_ACTUALES"" VALUES(""Lun"",15) "; SQL statement:
+insert into asistencia_evento values (1 ,2,'promocion'), (2 ,2,'promocion'),(4 ,2,'desarrollador'),(5 ,2,'desarrollador'),
+( 1,5,'acompañante'), (2 ,5,'acompañante'),(4 ,5,'participante'),(5 ,5,'participante'),
+( 3,6,'acompañante'), (2 ,6,'trasporte'),(7 ,6,'ponente'),(5 ,6,'ponente'),
+( 7,7,'limpieza de las computadoras'), (6 ,7,'pintura'),(5 ,7,'trasporte'),(4 ,7,'pintura'),(3 ,7,'mantenimiento'),
+
+insert into "PUBLIC"."DIAS_REUNION_ACTUALES" values("Lun",15) [42000-175]
+02-14 12:00:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Columna "Lun" no encontrada
+Column "Lun" not found; SQL statement:
+insert into "PUBLIC"."DIAS_REUNION_ACTUALES" values("Lun",15) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-14 12:01:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Columna "LUNES" no encontrada
+Column "LUNES" not found; SQL statement:
+insert into "PUBLIC"."DIAS_REUNION_ACTUALES" values(lunes,15) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1321)
+	at org.h2.server.web.WebApp.query(WebApp.java:1010)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:972)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:959)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-14 13:55:21 jdbc[175]: exception
+org.h2.jdbc.JdbcSQLException: Columna "ID" no encontrada
+Column "ID" not found; SQL statement:
+select t0.id_evento c0, t0.costo_total c1, t0.ubicacion c2, t0.id_Evento c3 from evento t0 order by id desc [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:810)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:70)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:267)
+	at com.jolbox.bonecp.ConnectionHandle.prepareStatement(ConnectionHandle.java:1024)
+	at com.avaje.ebeaninternal.server.query.CQuery.prepareBindExecuteQueryWithOption(CQuery.java:391)
+	at com.avaje.ebeaninternal.server.query.CQuery.prepareBindExecuteQuery(CQuery.java:368)
+	at com.avaje.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:165)
+	at com.avaje.ebeaninternal.server.query.DefaultOrmQueryEngine.findMany(DefaultOrmQueryEngine.java:77)
+	at com.avaje.ebeaninternal.server.core.OrmQueryRequest.findList(OrmQueryRequest.java:263)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.findList(DefaultServer.java:1502)
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.findList(DefaultOrmQuery.java:890)
+	at controllers.principal.perfil(principal.java:101)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$16$$anonfun$apply$16.apply(routes_routing.scala:382)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$16$$anonfun$apply$16.apply(routes_routing.scala:382)
+	at play.core.Router$HandlerInvokerFactory$$anon$4.resultCall(Router.scala:264)
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.invocation(Router.scala:255)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:55)
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82)
+	at play.core.j.JavaAction$$anonfun$11.apply(JavaAction.scala:82)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40)
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46)
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32)
+	at scala.concurrent.impl.Future$.apply(Future.scala:31)
+	at scala.concurrent.Future$.apply(Future.scala:492)
+	at play.core.j.JavaAction$class.apply(JavaAction.scala:82)
+	at play.core.Router$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$15$$anon$1.apply(Router.scala:252)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129)
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128)
+	at scala.Option.map(Option.scala:145)
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128)
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121)
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483)
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:483)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:519)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496)
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:496)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+02-14 13:59:31 jdbc[188]: exception
+org.h2.jdbc.JdbcSQLException: Conversión de datos fallida, convirtiendo "A"
+Data conversion error converting "A"; SQL statement:
+select t0.id c0, t0.area c1, t0.descripcion c2, t0.nombre c3, t0.tiempo_estimado c4, t0.estado c5, t0.coordinador_cod_g c6 from proyecto t0 where t0.estado = ?  order by t0.id desc [22018-175]
+02-14 13:59:59 jdbc[195]: exception
+org.h2.jdbc.JdbcSQLException: Conversión de datos fallida, convirtiendo "A"
+Data conversion error converting "A"; SQL statement:
+select t0.id c0, t0.area c1, t0.descripcion c2, t0.nombre c3, t0.tiempo_estimado c4, t0.estado c5, t0.coordinador_cod_g c6 from proyecto t0 where t0.estado = ?  order by t0.id desc [22018-175]
+02-16 17:43:42 jdbc[599]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "ASISTENCIA_EVENTO"; se esperaba "ALTER, ANALYZE, {"
+Syntax error in SQL statement "ASISTENCIA_EVENTO"; expected "ALTER, ANALYZE, {"; SQL statement:
+ASISTENCIA_EVENTO [42001-175]
+02-16 17:57:32 jdbc[607]: null
+org.h2.message.DbException: La conexión no fue cerrada por la aplicación y esta siendo limpiada (garbage collected)
+The connection was not closed by the application and is garbage collected [90018-175]
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.message.DbException.get(DbException.java:138)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:171)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:90)
+	at org.h2.Driver.connect(Driver.java:73)
+	at java.sql.DriverManager.getConnection(DriverManager.java:571)
+	at java.sql.DriverManager.getConnection(DriverManager.java:215)
+	at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:363)
+	at com.jolbox.bonecp.BoneCP.obtainInternalConnection(BoneCP.java:269)
+	at com.jolbox.bonecp.ConnectionHandle.<init>(ConnectionHandle.java:242)
+	at com.jolbox.bonecp.PoolWatchThread.fillConnections(PoolWatchThread.java:115)
+	at com.jolbox.bonecp.PoolWatchThread.run(PoolWatchThread.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.h2.jdbc.JdbcSQLException: La conexión no fue cerrada por la aplicación y esta siendo limpiada (garbage collected)
+The connection was not closed by the application and is garbage collected [90018-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	... 17 more
+02-17 17:20:32 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Nombre de columna Duplicada "COD_ARTICULO"
+Duplicate column name "COD_ARTICULO"; SQL statement:
+insert into area_articulo (area, cod_articulo, cod_Articulo) values (?,?,?) [42121-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.command.Parser.parseColumnList(Parser.java:789)
+	at org.h2.command.Parser.parseInsert(Parser.java:975)
+	at org.h2.command.Parser.parsePrepared(Parser.java:375)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:70)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:267)
+	at com.jolbox.bonecp.ConnectionHandle.prepareStatement(ConnectionHandle.java:979)
+	at com.avaje.ebeaninternal.server.persist.dml.InsertHandler.getPstmt(InsertHandler.java:125)
+	at com.avaje.ebeaninternal.server.persist.dml.InsertHandler.bind(InsertHandler.java:105)
+	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.execute(DmlBeanPersister.java:79)
+	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.insert(DmlBeanPersister.java:57)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersistExecute.executeInsertBean(DefaultPersistExecute.java:66)
+	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeNow(PersistRequestBean.java:448)
+	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeOrQueue(PersistRequestBean.java:478)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.insert(DefaultPersister.java:335)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.saveEnhanced(DefaultPersister.java:310)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.saveRecurse(DefaultPersister.java:280)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.save(DefaultPersister.java:248)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1568)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1558)
+	at com.avaje.ebean.Ebean.save(Ebean.java:453)
+	at play.db.ebean.Model.save(Model.java:91)
+	at controllers.Normal.RegistrarAr(Normal.java:204)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:321)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:321)
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183)
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+02-17 17:26:44 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Nombre de columna Duplicada "COD_ARTICULO"
+Duplicate column name "COD_ARTICULO"; SQL statement:
+insert into area_articulo (area, cod_articulo, cod_Articulo) values (?,?,?) [42121-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.command.Parser.parseColumnList(Parser.java:789)
+	at org.h2.command.Parser.parseInsert(Parser.java:975)
+	at org.h2.command.Parser.parsePrepared(Parser.java:375)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:70)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:267)
+	at com.jolbox.bonecp.ConnectionHandle.prepareStatement(ConnectionHandle.java:979)
+	at com.avaje.ebeaninternal.server.persist.dml.InsertHandler.getPstmt(InsertHandler.java:125)
+	at com.avaje.ebeaninternal.server.persist.dml.InsertHandler.bind(InsertHandler.java:105)
+	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.execute(DmlBeanPersister.java:79)
+	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.insert(DmlBeanPersister.java:57)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersistExecute.executeInsertBean(DefaultPersistExecute.java:66)
+	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeNow(PersistRequestBean.java:448)
+	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeOrQueue(PersistRequestBean.java:478)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.insert(DefaultPersister.java:335)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.saveEnhanced(DefaultPersister.java:310)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.saveRecurse(DefaultPersister.java:280)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.save(DefaultPersister.java:248)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1568)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1558)
+	at com.avaje.ebean.Ebean.save(Ebean.java:453)
+	at play.db.ebean.Model.save(Model.java:91)
+	at controllers.Normal.RegistrarAr(Normal.java:204)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:321)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:321)
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183)
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+02-17 17:27:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Nombre de columna Duplicada "COD_ARTICULO"
+Duplicate column name "COD_ARTICULO"; SQL statement:
+insert into area_articulo (area, cod_articulo, cod_Articulo) values (?,?,?) [42121-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.command.Parser.parseColumnList(Parser.java:789)
+	at org.h2.command.Parser.parseInsert(Parser.java:975)
+	at org.h2.command.Parser.parsePrepared(Parser.java:375)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:70)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:267)
+	at com.jolbox.bonecp.ConnectionHandle.prepareStatement(ConnectionHandle.java:979)
+	at com.avaje.ebeaninternal.server.persist.dml.InsertHandler.getPstmt(InsertHandler.java:125)
+	at com.avaje.ebeaninternal.server.persist.dml.InsertHandler.bind(InsertHandler.java:105)
+	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.execute(DmlBeanPersister.java:79)
+	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.insert(DmlBeanPersister.java:57)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersistExecute.executeInsertBean(DefaultPersistExecute.java:66)
+	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeNow(PersistRequestBean.java:448)
+	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeOrQueue(PersistRequestBean.java:478)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.insert(DefaultPersister.java:335)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.saveEnhanced(DefaultPersister.java:310)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.saveRecurse(DefaultPersister.java:280)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.save(DefaultPersister.java:248)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1568)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1558)
+	at com.avaje.ebean.Ebean.save(Ebean.java:453)
+	at play.db.ebean.Model.save(Model.java:91)
+	at controllers.Normal.RegistrarAr(Normal.java:204)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:321)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:321)
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183)
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+02-17 17:27:41 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Nombre de columna Duplicada "COD_ARTICULO"
+Duplicate column name "COD_ARTICULO"; SQL statement:
+insert into area_articulo (area, cod_articulo, cod_Articulo) values (?,?,?) [42121-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.command.Parser.parseColumnList(Parser.java:789)
+	at org.h2.command.Parser.parseInsert(Parser.java:975)
+	at org.h2.command.Parser.parsePrepared(Parser.java:375)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:70)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:267)
+	at com.jolbox.bonecp.ConnectionHandle.prepareStatement(ConnectionHandle.java:979)
+	at com.avaje.ebeaninternal.server.persist.dml.InsertHandler.getPstmt(InsertHandler.java:125)
+	at com.avaje.ebeaninternal.server.persist.dml.InsertHandler.bind(InsertHandler.java:105)
+	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.execute(DmlBeanPersister.java:79)
+	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.insert(DmlBeanPersister.java:57)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersistExecute.executeInsertBean(DefaultPersistExecute.java:66)
+	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeNow(PersistRequestBean.java:448)
+	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeOrQueue(PersistRequestBean.java:478)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.insert(DefaultPersister.java:335)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.saveEnhanced(DefaultPersister.java:310)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.saveRecurse(DefaultPersister.java:280)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.save(DefaultPersister.java:248)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1568)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1558)
+	at com.avaje.ebean.Ebean.save(Ebean.java:453)
+	at play.db.ebean.Model.save(Model.java:91)
+	at controllers.Normal.RegistrarAr(Normal.java:204)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:321)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:321)
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183)
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+02-17 17:29:37 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Nombre de columna Duplicada "COD_ARTICULO"
+Duplicate column name "COD_ARTICULO"; SQL statement:
+insert into area_articulo (area, cod_articulo, cod_Articulo) values (?,?,?) [42121-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.command.Parser.parseColumnList(Parser.java:789)
+	at org.h2.command.Parser.parseInsert(Parser.java:975)
+	at org.h2.command.Parser.parsePrepared(Parser.java:375)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:70)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:267)
+	at com.jolbox.bonecp.ConnectionHandle.prepareStatement(ConnectionHandle.java:979)
+	at com.avaje.ebeaninternal.server.persist.dml.InsertHandler.getPstmt(InsertHandler.java:125)
+	at com.avaje.ebeaninternal.server.persist.dml.InsertHandler.bind(InsertHandler.java:105)
+	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.execute(DmlBeanPersister.java:79)
+	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.insert(DmlBeanPersister.java:57)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersistExecute.executeInsertBean(DefaultPersistExecute.java:66)
+	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeNow(PersistRequestBean.java:448)
+	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeOrQueue(PersistRequestBean.java:478)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.insert(DefaultPersister.java:335)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.saveEnhanced(DefaultPersister.java:310)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.saveRecurse(DefaultPersister.java:280)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.save(DefaultPersister.java:248)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1568)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1558)
+	at com.avaje.ebean.Ebean.save(Ebean.java:453)
+	at play.db.ebean.Model.save(Model.java:91)
+	at controllers.Normal.RegistrarAr(Normal.java:204)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:321)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:321)
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183)
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+02-17 17:37:39 jdbc[3]: null
+org.h2.message.DbException: La conexión no fue cerrada por la aplicación y esta siendo limpiada (garbage collected)
+The connection was not closed by the application and is garbage collected [90018-172]
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:171)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:90)
+	at org.h2.Driver.connect(Driver.java:73)
+	at java.sql.DriverManager.getConnection(DriverManager.java:571)
+	at java.sql.DriverManager.getConnection(DriverManager.java:215)
+	at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:339)
+	at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:405)
+	at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:120)
+	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:245)
+	at play.api.db.BoneCPPlugin$$anonfun$onStart$1.apply(DB.scala:243)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:244)
+	at scala.collection.immutable.List.foreach(List.scala:318)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:244)
+	at scala.collection.AbstractTraversable.map(Traversable.scala:105)
+	at play.api.db.BoneCPPlugin.onStart(DB.scala:243)
+	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88)
+	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88)
+	at scala.collection.immutable.List.foreach(List.scala:318)
+	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88)
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:88)
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:88)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:18)
+	at play.api.Play$.start(Play.scala:87)
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139)
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112)
+	at scala.Option.map(Option.scala:145)
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112)
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110)
+	at scala.util.Success.flatMap(Try.scala:200)
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110)
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: org.h2.jdbc.JdbcSQLException: La conexión no fue cerrada por la aplicación y esta siendo limpiada (garbage collected)
+The connection was not closed by the application and is garbage collected [90018-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	... 43 more
+02-17 17:38:28 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Nombre de columna Duplicada "COD_ARTICULO"
+Duplicate column name "COD_ARTICULO"; SQL statement:
+insert into area_articulo (area, cod_articulo, cod_Articulo) values (?,?,?) [42121-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.command.Parser.parseColumnList(Parser.java:789)
+	at org.h2.command.Parser.parseInsert(Parser.java:975)
+	at org.h2.command.Parser.parsePrepared(Parser.java:375)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:70)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:267)
+	at com.jolbox.bonecp.ConnectionHandle.prepareStatement(ConnectionHandle.java:979)
+	at com.avaje.ebeaninternal.server.persist.dml.InsertHandler.getPstmt(InsertHandler.java:125)
+	at com.avaje.ebeaninternal.server.persist.dml.InsertHandler.bind(InsertHandler.java:105)
+	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.execute(DmlBeanPersister.java:79)
+	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.insert(DmlBeanPersister.java:57)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersistExecute.executeInsertBean(DefaultPersistExecute.java:66)
+	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeNow(PersistRequestBean.java:448)
+	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeOrQueue(PersistRequestBean.java:478)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.insert(DefaultPersister.java:335)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.saveEnhanced(DefaultPersister.java:310)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.saveRecurse(DefaultPersister.java:280)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.save(DefaultPersister.java:248)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1568)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1558)
+	at com.avaje.ebean.Ebean.save(Ebean.java:453)
+	at play.db.ebean.Model.save(Model.java:91)
+	at controllers.Normal.RegistrarAr(Normal.java:204)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:321)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:321)
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183)
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+02-17 17:40:28 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: No hay datos disponibles.
+No data is available [2000-172]
+02-18 11:58:33 jdbc[138]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "SELECT T0.PUNTO C0, T0.REUNION_ID C1, T0.REUNION_ID C2 FROM PUNTOS_FIJOS T0 WHERE T0.NULL[*] = ?  AND REUNION_ID = ?  "; se esperaba "identifier"
+Syntax error in SQL statement "SELECT T0.PUNTO C0, T0.REUNION_ID C1, T0.REUNION_ID C2 FROM PUNTOS_FIJOS T0 WHERE T0.NULL[*] = ?  AND REUNION_ID = ?  "; expected "identifier"; SQL statement:
+select t0.punto c0, t0.reunion_id c1, t0.reunion_id c2 from puntos_fijos t0 where t0.null = ?  and reunion_id = ?  [42001-172]
+02-18 12:03:23 jdbc[147]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "SELECT T0.PUNTO C0, T0.REUNION_ID C1, T0.REUNION_ID C2 FROM PUNTOS_FIJOS T0 WHERE T0.NULL[*] = ?  AND REUNION_ID = ?  "; se esperaba "identifier"
+Syntax error in SQL statement "SELECT T0.PUNTO C0, T0.REUNION_ID C1, T0.REUNION_ID C2 FROM PUNTOS_FIJOS T0 WHERE T0.NULL[*] = ?  AND REUNION_ID = ?  "; expected "identifier"; SQL statement:
+select t0.punto c0, t0.reunion_id c1, t0.reunion_id c2 from puntos_fijos t0 where t0.null = ?  and reunion_id = ?  [42001-172]
+02-18 20:45:13 jdbc[73]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ""PUBLIC"".""RECURSOS""
+VALUES( '6 laptos',1),('6 laptos',2),( 'bus universitario',6),( '6 laptos',4),( '6 laptos',3),( '6 laptos',8),( '2 arduinos',1),( '2 arduinos',2),( '2 arduinos',3),( '2 arduinos',4),( '6 laptos',5),( '6 laptos',6),( '6 laptos',7),( 'bus universitario',5),
+( '50 platos comida',1),( '50 platos comida',2),( '50 platos comida',7),( '50 platos comida',6),( '50 platos comida',5),( '5 software licenciados ',4),('5 software licenciados ',3),( '1000 bs.f',4),( '500 bs.f',2),( '500 bs.f',3),( '2000 bs.f',1),( '2000 bs.f',5),( '300 bs.f',6),( '3000 bs.f',7)
+
+INSERT[*] INTO ""PUBLIC"".""TELEFONOS""
+VALUES( '02865838071',1),('04243874631',1),( '02869512706',2),( '02866454321',3),( '02866454563',4),('04245632276',5),( '04245839064',6),( '04264958321',7),( '04245634980',4),( '02865424530',7),( '02865334421',3)"
+Syntax error in SQL statement "INSERT INTO ""PUBLIC"".""RECURSOS""
+VALUES( '6 laptos',1),('6 laptos',2),( 'bus universitario',6),( '6 laptos',4),( '6 laptos',3),( '6 laptos',8),( '2 arduinos',1),( '2 arduinos',2),( '2 arduinos',3),( '2 arduinos',4),( '6 laptos',5),( '6 laptos',6),( '6 laptos',7),( 'bus universitario',5),
+( '50 platos comida',1),( '50 platos comida',2),( '50 platos comida',7),( '50 platos comida',6),( '50 platos comida',5),( '5 software licenciados ',4),('5 software licenciados ',3),( '1000 bs.f',4),( '500 bs.f',2),( '500 bs.f',3),( '2000 bs.f',1),( '2000 bs.f',5),( '300 bs.f',6),( '3000 bs.f',7)
+
+INSERT[*] INTO ""PUBLIC"".""TELEFONOS""
+VALUES( '02865838071',1),('04243874631',1),( '02869512706',2),( '02866454321',3),( '02866454563',4),('04245632276',5),( '04245839064',6),( '04264958321',7),( '04245634980',4),( '02865424530',7),( '02865334421',3)"; SQL statement:
+INSERT INTO "PUBLIC"."RECURSOS"
+VALUES( '6 laptos',1),('6 laptos',2),( 'bus universitario',6),( '6 laptos',4),( '6 laptos',3),( '6 laptos',8),( '2 arduinos',1),( '2 arduinos',2),( '2 arduinos',3),( '2 arduinos',4),( '6 laptos',5),( '6 laptos',6),( '6 laptos',7),( 'bus universitario',5),
+( '50 platos comida',1),( '50 platos comida',2),( '50 platos comida',7),( '50 platos comida',6),( '50 platos comida',5),( '5 software licenciados ',4),('5 software licenciados ',3),( '1000 bs.f',4),( '500 bs.f',2),( '500 bs.f',3),( '2000 bs.f',1),( '2000 bs.f',5),( '300 bs.f',6),( '3000 bs.f',7)
+
+INSERT INTO "PUBLIC"."TELEFONOS"
+VALUES( '02865838071',1),('04243874631',1),( '02869512706',2),( '02866454321',3),( '02866454563',4),('04245632276',5),( '04245839064',6),( '04264958321',7),( '04245634980',4),( '02865424530',7),( '02865334421',3) [42000-172]
+02-19 10:49:59 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ""PUBLIC"".""RECONOCIMIENTO""
+VALUES( 'reconocimiento por parte de CANTV',4),('Reportaje en Nueva Prensa acerca del evento',4),( '1° lugar en competencia inter universidad guayana',2)
+
+INSERT[*] INTO ""PUBLIC"".""PROGRAMACION""
+VALUES(1, 1, '2015-02-04 14:00:00.00' , '2015-02-04 20:00:00.00' , '2015-02-04 14:00:00.00' , 'reunion para planificacion de proyecto' , 2 ),(2, 1, '2015-02-12 16:00:00.00' , '2015-02-20 16:00:00.00' , '2015-02-20 16:00:00.00','desarrollo del controlador y de la arquitectura del robot' , 5),(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , NULL, 'montado de de pista para pruebas del robot' , 2),(4, 1 , '2015-03-11 16:00:00.00' , '2015-03-12 16:00:00.00'  , NULL , 'presentacion del prototipo del robot' ,7 ),(5, 1 , '2014-04-01 11:21:57.566' , '2014-04-02 11:21:57.566' ,NULL  , 'presentacion del robot en evento de promocion y finalizacion del proyecto' , 5),
+(1, 2, '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , 'primer dia del evento-presentacion del SUBA' , 1 ),(2, 2, '2014-01-9 8:21:57.566' , '2014-01-9 11:21:57.566'  , '2014-01-9 8:21:57.566' , 'segundo dia del evento- presentacion de nuevas app' , 3),(3, 2 , '2014-01-10 08:21:57.566' , '2014-01-10 11:21:57.566' , '2014-01-10 8:21:57.566' , 'tercer dia del evento-presentacion de Gipar proyectos' , 5),
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , NULL , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-20 16:00:00.00'  , NULL , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',NULL  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , NULL,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , NULL,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', NULL , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , NULL , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , NULL , 'segundo dia de reparacion del GIPAR y exteriores' , 2) "
+Syntax error in SQL statement "INSERT INTO ""PUBLIC"".""RECONOCIMIENTO""
+VALUES( 'reconocimiento por parte de CANTV',4),('Reportaje en Nueva Prensa acerca del evento',4),( '1° lugar en competencia inter universidad guayana',2)
+
+INSERT[*] INTO ""PUBLIC"".""PROGRAMACION""
+VALUES(1, 1, '2015-02-04 14:00:00.00' , '2015-02-04 20:00:00.00' , '2015-02-04 14:00:00.00' , 'reunion para planificacion de proyecto' , 2 ),(2, 1, '2015-02-12 16:00:00.00' , '2015-02-20 16:00:00.00' , '2015-02-20 16:00:00.00','desarrollo del controlador y de la arquitectura del robot' , 5),(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , NULL, 'montado de de pista para pruebas del robot' , 2),(4, 1 , '2015-03-11 16:00:00.00' , '2015-03-12 16:00:00.00'  , NULL , 'presentacion del prototipo del robot' ,7 ),(5, 1 , '2014-04-01 11:21:57.566' , '2014-04-02 11:21:57.566' ,NULL  , 'presentacion del robot en evento de promocion y finalizacion del proyecto' , 5),
+(1, 2, '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , 'primer dia del evento-presentacion del SUBA' , 1 ),(2, 2, '2014-01-9 8:21:57.566' , '2014-01-9 11:21:57.566'  , '2014-01-9 8:21:57.566' , 'segundo dia del evento- presentacion de nuevas app' , 3),(3, 2 , '2014-01-10 08:21:57.566' , '2014-01-10 11:21:57.566' , '2014-01-10 8:21:57.566' , 'tercer dia del evento-presentacion de Gipar proyectos' , 5),
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , NULL , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-20 16:00:00.00'  , NULL , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',NULL  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , NULL,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , NULL,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', NULL , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , NULL , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , NULL , 'segundo dia de reparacion del GIPAR y exteriores' , 2) "; SQL statement:
+INSERT INTO "PUBLIC"."RECONOCIMIENTO"
+VALUES( 'reconocimiento por parte de CANTV',4),('Reportaje en Nueva Prensa acerca del evento',4),( '1° lugar en competencia inter universidad guayana',2)
+
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES(1, 1, '2015-02-04 14:00:00.00' , '2015-02-04 20:00:00.00' , '2015-02-04 14:00:00.00' , 'reunion para planificacion de proyecto' , 2 ),(2, 1, '2015-02-12 16:00:00.00' , '2015-02-20 16:00:00.00' , '2015-02-20 16:00:00.00','desarrollo del controlador y de la arquitectura del robot' , 5),(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , null, 'montado de de pista para pruebas del robot' , 2),(4, 1 , '2015-03-11 16:00:00.00' , '2015-03-12 16:00:00.00'  , null , 'presentacion del prototipo del robot' ,7 ),(5, 1 , '2014-04-01 11:21:57.566' , '2014-04-02 11:21:57.566' ,null  , 'presentacion del robot en evento de promocion y finalizacion del proyecto' , 5),
+(1, 2, '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , 'primer dia del evento-presentacion del SUBA' , 1 ),(2, 2, '2014-01-9 8:21:57.566' , '2014-01-9 11:21:57.566'  , '2014-01-9 8:21:57.566' , 'segundo dia del evento- presentacion de nuevas app' , 3),(3, 2 , '2014-01-10 08:21:57.566' , '2014-01-10 11:21:57.566' , '2014-01-10 8:21:57.566' , 'tercer dia del evento-presentacion de Gipar proyectos' , 5),
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-20 16:00:00.00'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , null,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , null,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', null , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , null , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , null , 'segundo dia de reparacion del GIPAR y exteriores' , 2) [42000-172]
+02-20 19:45:29 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Columna "CURRET_DATESTAMP" no encontrada
+Column "CURRET_DATESTAMP" not found; SQL statement:
+select Curret_Datestamp [42122-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:808)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-20 19:46:08 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Columna "CURRENT_DATESTAMP" no encontrada
+Column "CURRENT_DATESTAMP" not found; SQL statement:
+select current_datestamp [42122-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:808)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-20 19:46:12 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Columna "CURRENT_DATESTAMP" no encontrada
+Column "CURRENT_DATESTAMP" not found; SQL statement:
+select current_datestamp [42122-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:808)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-20 19:46:23 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Columna "CURRENT_DATETAMP" no encontrada
+Column "CURRENT_DATETAMP" not found; SQL statement:
+select current_DATETAMP [42122-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:808)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-20 19:46:24 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Columna "CURRENT_DATETAMPS" no encontrada
+Column "CURRENT_DATETAMPS" not found; SQL statement:
+select current_DATETAMPS [42122-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:808)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-20 19:46:52 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Columna "CURRENT_DATESTAMP" no encontrada
+Column "CURRENT_DATESTAMP" not found; SQL statement:
+select current_datestamp [42122-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:808)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-20 19:48:01 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Conversión de datos fallida, convirtiendo "'' (REPORTE: REDACTOR_COD_G INTEGER)"
+Data conversion error converting "'' (REPORTE: REDACTOR_COD_G INTEGER)"; SQL statement:
+INSERT INTO "PUBLIC"."REPORTE"("N_REPORTE","FECHA","CONTENIDO","REDACTOR_COD_G","TIPO_REPORTE","PROYECTO_ID")VALUES(?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6) [22018-172]
+02-20 19:48:01 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Conversión de datos fallida, convirtiendo "'' (REPORTE: REDACTOR_COD_G INTEGER)"
+Data conversion error converting "'' (REPORTE: REDACTOR_COD_G INTEGER)"; SQL statement:
+INSERT INTO "PUBLIC"."REPORTE"("N_REPORTE","FECHA","CONTENIDO","REDACTOR_COD_G","TIPO_REPORTE","PROYECTO_ID")VALUES(?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6) [22018-172]
+02-23 11:50:23 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO "PUBLIC"."PROYECTO"
+VALUES( 1 ,'robotica','robot velocista que usa un nuevo metodo de traccion para aumentar la velocidad','guayanito 2.0','2014-04-02 11:21:57.566','A',4),
+( 8 ,'robotica','lector de tension para cables electricos de alta potencia de descarga','spider_G','2014-04-20 11:21:57.566','A',3),
+( 2 ,'programacion','evento de para promocionar nuevas aplicaciones android hecha por los estudiantes','inovandroid','2014-01-10 11:21:57.566','F',3),
+( 3 ,'robotica','sumo ninja diseñado para golpear ladrones','sumito','2014-03-10 11:21:57.566','A',6),
+( 4 ,'automatizacion','sistema de automatizacion de lineas de produccion de juguetes','cokGIPAT','2013-12-10 11:21:57.566','F',5),
+( 5 ,'robotica','evento en la ULA de competencias de roborica','robot-matic 2014','2014-06-10 11:21:57.566','A',6),
+( 6 ,'programacion','evento union programada (Angular y bootraps)','Union Prog 2014','2014-03-10 11:21:57.566','A',4),
+( 7 ,'social','Evento de apoyo a a la universidad GIPAR responde',' GIPAR responde','2014-01-12 11:21:57.566','F',2) [21002-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-23 11:52:47 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "INSERT INTO ""PUBLIC"".""RECONOCIMIENTO""
+VALUES( 'reconocimiento por parte de CANTV',4),('Reportaje en Nueva Prensa acerca del evento',4),( '1° lugar en competencia inter universidad guayana',2)
+
+INSERT[*] INTO ""PUBLIC"".""PROGRAMACION""
+VALUES(1, 1, '2015-02-04 14:00:00.00' , '2015-02-04 20:00:00.00' , '2015-02-04 14:00:00.00' , 'reunion para planificacion de proyecto' , 2 ),(2, 1, '2015-02-12 16:00:00.00' , '2015-02-20 16:00:00.00' , '2015-02-20 16:00:00.00','desarrollo del controlador y de la arquitectura del robot' , 5),(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , NULL, 'montado de de pista para pruebas del robot' , 2),(4, 1 , '2015-03-11 16:00:00.00' , '2015-03-12 16:00:00.00'  , NULL , 'presentacion del prototipo del robot' ,7 ),(5, 1 , '2014-04-01 11:21:57.566' , '2014-04-02 11:21:57.566' ,NULL  , 'presentacion del robot en evento de promocion y finalizacion del proyecto' , 5),
+(1, 2, '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , 'primer dia del evento-presentacion del SUBA' , 1 ),(2, 2, '2014-01-9 8:21:57.566' , '2014-01-9 11:21:57.566'  , '2014-01-9 8:21:57.566' , 'segundo dia del evento- presentacion de nuevas app' , 3),(3, 2 , '2014-01-10 08:21:57.566' , '2014-01-10 11:21:57.566' , '2014-01-10 8:21:57.566' , 'tercer dia del evento-presentacion de Gipar proyectos' , 5),
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , NULL , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-20 16:00:00.00'  , NULL , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',NULL  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , NULL,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , NULL,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', NULL , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , NULL , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , NULL , 'segundo dia de reparacion del GIPAR y exteriores' , 2) "
+Syntax error in SQL statement "INSERT INTO ""PUBLIC"".""RECONOCIMIENTO""
+VALUES( 'reconocimiento por parte de CANTV',4),('Reportaje en Nueva Prensa acerca del evento',4),( '1° lugar en competencia inter universidad guayana',2)
+
+INSERT[*] INTO ""PUBLIC"".""PROGRAMACION""
+VALUES(1, 1, '2015-02-04 14:00:00.00' , '2015-02-04 20:00:00.00' , '2015-02-04 14:00:00.00' , 'reunion para planificacion de proyecto' , 2 ),(2, 1, '2015-02-12 16:00:00.00' , '2015-02-20 16:00:00.00' , '2015-02-20 16:00:00.00','desarrollo del controlador y de la arquitectura del robot' , 5),(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , NULL, 'montado de de pista para pruebas del robot' , 2),(4, 1 , '2015-03-11 16:00:00.00' , '2015-03-12 16:00:00.00'  , NULL , 'presentacion del prototipo del robot' ,7 ),(5, 1 , '2014-04-01 11:21:57.566' , '2014-04-02 11:21:57.566' ,NULL  , 'presentacion del robot en evento de promocion y finalizacion del proyecto' , 5),
+(1, 2, '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , 'primer dia del evento-presentacion del SUBA' , 1 ),(2, 2, '2014-01-9 8:21:57.566' , '2014-01-9 11:21:57.566'  , '2014-01-9 8:21:57.566' , 'segundo dia del evento- presentacion de nuevas app' , 3),(3, 2 , '2014-01-10 08:21:57.566' , '2014-01-10 11:21:57.566' , '2014-01-10 8:21:57.566' , 'tercer dia del evento-presentacion de Gipar proyectos' , 5),
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , NULL , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-20 16:00:00.00'  , NULL , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',NULL  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , NULL,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , NULL,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', NULL , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , NULL , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , NULL , 'segundo dia de reparacion del GIPAR y exteriores' , 2) "; SQL statement:
+INSERT INTO "PUBLIC"."RECONOCIMIENTO"
+VALUES( 'reconocimiento por parte de CANTV',4),('Reportaje en Nueva Prensa acerca del evento',4),( '1° lugar en competencia inter universidad guayana',2)
+
+INSERT INTO "PUBLIC"."PROGRAMACION"
+VALUES(1, 1, '2015-02-04 14:00:00.00' , '2015-02-04 20:00:00.00' , '2015-02-04 14:00:00.00' , 'reunion para planificacion de proyecto' , 2 ),(2, 1, '2015-02-12 16:00:00.00' , '2015-02-20 16:00:00.00' , '2015-02-20 16:00:00.00','desarrollo del controlador y de la arquitectura del robot' , 5),(3, 1 , '2015-03-05 12:00:00.00' , '2015-03-10 12:00:00.00' , null, 'montado de de pista para pruebas del robot' , 2),(4, 1 , '2015-03-11 16:00:00.00' , '2015-03-12 16:00:00.00'  , null , 'presentacion del prototipo del robot' ,7 ),(5, 1 , '2014-04-01 11:21:57.566' , '2014-04-02 11:21:57.566' ,null  , 'presentacion del robot en evento de promocion y finalizacion del proyecto' , 5),
+(1, 2, '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , '2014-01-8 8:21:57.566' , 'primer dia del evento-presentacion del SUBA' , 1 ),(2, 2, '2014-01-9 8:21:57.566' , '2014-01-9 11:21:57.566'  , '2014-01-9 8:21:57.566' , 'segundo dia del evento- presentacion de nuevas app' , 3),(3, 2 , '2014-01-10 08:21:57.566' , '2014-01-10 11:21:57.566' , '2014-01-10 8:21:57.566' , 'tercer dia del evento-presentacion de Gipar proyectos' , 5),
+(1, 3, '2014-01-10 11:21:57.566' ,'2014-01-20 11:21:57.566'  , null , 'reunion de diseño de sumo usando plano viejo' , 5 ),(2, 3, '2015-01-21 16:00:00.00' ,'2015-02-20 16:00:00.00'  , null , 'desarrollo del robot ' , 4),(3, 3 , '2015-02-04 16:00:00.00' ,  '2014-03-10 11:21:57.566',null  , 'presentacion de prototipo del robot ' , 3),
+(1, 5,'2014-06-8 11:21:57.566'  , '2014-06-8 11:21:57.566'  , null,'primer dia de evento: traslado incripcion y eventos de programacion' , 1),(2, 5, '2014-06-9 11:21:57.566' , '2014-06-9 11:21:57.566' , null,'2 dia de evento : competencias ' , 3),(3, 5 ,'2014-06-10 11:21:57.566'  ,  '2014-06-10 11:21:57.566', null , '3 dia de evento:entrega de premios y salida' , 4),
+ (1, 7, '2014-01-11 11:21:57.566' , '2014-01-11 16:21:57.566' , null , 'primer dia de reparacion del GIPAR' ,3 ),(2, 7, '2014-01-12 16:21:57.566' , '2014-01-12 16:21:57.566' , null , 'segundo dia de reparacion del GIPAR y exteriores' , 2) [42000-172]
+02-23 14:26:34 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "RECURSOS"; se esperaba "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, {"
+Syntax error in SQL statement "RECURSOS"; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, {"; SQL statement:
+RECURSOS [42001-172]
+02-24 02:25:08 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO "PUBLIC"."MIEMBRO"
+VALUES( 1 ,'admin','1234','fotos_perfil/defecto.png','A','24036810','carlos','marcano','dmarcano@hotmail.es','M','2013-01-01 11:21:57.566',1,null) [21002-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-24 02:25:08 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO "PUBLIC"."MIEMBRO"
+VALUES( 2 ,'Cordi1','members','fotos_perfil/defecto.png','C','23036520','luis','coronado','lcoronado@hotmail.com','M','2013-02-01 11:21:57.566',1,1) [21002-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-24 02:25:08 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO "PUBLIC"."MIEMBRO"
+VALUES( 3 ,'cordi2','robotica','fotos_perfil/defecto.png','C','28037820','marta','lopez','lmarta@gmail.com','F','2014-01-01 11:21:57.566',1,1) [21002-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-24 02:25:08 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO "PUBLIC"."MIEMBRO"
+VALUES( 4 ,'meber1','123','fotos_perfil/defecto.png','N','24036750','carlose','marcane','dmaro@hotmail.com','M','2014-09-01 11:21:57.566',1,3) [21002-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-24 02:25:08 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO "PUBLIC"."MIEMBRO"
+VALUES( 5 ,'meber2','124','fotos_perfil/defecto.png','N','22136810','michael','stefan','gatica_miau@hotmail.es','F','2014-07-01 11:21:57.566',1,2) [21002-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-24 02:25:08 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO "PUBLIC"."MIEMBRO"
+VALUES( 6 ,'meber3','123arbol','fotos_perfil/defecto.png','N','24035410','marta','Susana','martaSusana@hotmail.es','F','2015-01-01 11:21:57.566',1,3) [21002-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-24 02:25:08 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO "PUBLIC"."MIEMBRO"
+VALUES( 7 ,'menber4','25434','fotos_perfil/defecto.png','N','24037610','chichico','chic','chichico@hotmail.es','M','2014-02-01 11:21:57.566',1,2) [21002-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-24 02:26:27 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO "PUBLIC"."PROYECTO"
+VALUES( 1 ,'robotica','robot velocista que usa un nuevo metodo de traccion para aumentar la velocidad','guayanito 2.0','2014-04-02 11:21:57.566','A',4,null),
+( 8 ,'robotica','lector de tension para cables electricos de alta potencia de descarga','spider_G','2014-04-20 11:21:57.566','A',3,null),
+( 2 ,'programacion','evento de para promocionar nuevas aplicaciones android hecha por los estudiantes','inovandroid','2014-01-10 11:21:57.566','F',3,null),
+( 3 ,'robotica','sumo ninja diseñado para golpear ladrones','sumito','2014-03-10 11:21:57.566','A',6,null),
+( 4 ,'automatizacion','sistema de automatizacion de lineas de produccion de juguetes','cokGIPAT','2013-12-10 11:21:57.566','F',5,null),
+( 5 ,'robotica','evento en la ULA de competencias de roborica','robot-matic 2014','2014-06-10 11:21:57.566','A',6,null),
+( 6 ,'programacion','evento union programada (Angular y bootraps)','Union Prog 2014','2014-03-10 11:21:57.566','A',4,null),
+( 7 ,'social','Evento de apoyo a a la universidad GIPAR responde',' GIPAR responde','2014-01-12 11:21:57.566','F',2,null) [21002-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:167)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:155)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1316)
+	at org.h2.server.web.WebApp.query(WebApp.java:1005)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:954)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:744)
+02-25 00:34:33 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Columna "ID" no encontrada
+Column "ID" not found; SQL statement:
+select t0.numero_Reunion c0, t0.fecha_reunion c1, t0.moderador c2 from reunion t0 order by id desc [42122-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:808)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:70)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:267)
+	at com.jolbox.bonecp.ConnectionHandle.prepareStatement(ConnectionHandle.java:979)
+	at com.avaje.ebeaninternal.server.query.CQuery.prepareBindExecuteQuery(CQuery.java:360)
+	at com.avaje.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:162)
+	at com.avaje.ebeaninternal.server.query.DefaultOrmQueryEngine.findMany(DefaultOrmQueryEngine.java:77)
+	at com.avaje.ebeaninternal.server.core.OrmQueryRequest.findList(OrmQueryRequest.java:265)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.findList(DefaultServer.java:1460)
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.findList(DefaultOrmQuery.java:885)
+	at controllers.proyectos_Controlador.RegistrarReuniones(proyectos_Controlador.java:671)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$53$$anonfun$apply$53.apply(routes_routing.scala:757)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$53$$anonfun$apply$53.apply(routes_routing.scala:757)
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183)
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+02-25 00:34:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Columna "COD_G" no encontrada
+Column "COD_G" not found; SQL statement:
+select t0.numero_Reunion c0, t0.fecha_reunion c1, t0.moderador c2 from reunion t0 order by cod_G desc [42122-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:808)
+	at org.h2.command.Parser.prepareCommand(Parser.java:219)
+	at org.h2.engine.Session.prepareLocal(Session.java:425)
+	at org.h2.engine.Session.prepareCommand(Session.java:374)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:70)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:267)
+	at com.jolbox.bonecp.ConnectionHandle.prepareStatement(ConnectionHandle.java:979)
+	at com.avaje.ebeaninternal.server.query.CQuery.prepareBindExecuteQuery(CQuery.java:360)
+	at com.avaje.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:162)
+	at com.avaje.ebeaninternal.server.query.DefaultOrmQueryEngine.findMany(DefaultOrmQueryEngine.java:77)
+	at com.avaje.ebeaninternal.server.core.OrmQueryRequest.findList(OrmQueryRequest.java:265)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.findList(DefaultServer.java:1460)
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.findList(DefaultOrmQuery.java:885)
+	at controllers.proyectos_Controlador.RegistrarReuniones(proyectos_Controlador.java:671)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$53$$anonfun$apply$53.apply(routes_routing.scala:757)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$53$$anonfun$apply$53.apply(routes_routing.scala:757)
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183)
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+02-28 23:39:31 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Valor demasiado largo para la columna "TIPO_REPORTE VARCHAR(30) NOT NULL": "'Reporte Mensual proyectos General' (33)"
+Value too long for column "TIPO_REPORTE VARCHAR(30) NOT NULL": "'Reporte Mensual proyectos General' (33)"; SQL statement:
+insert into reporte (n_reporte, fecha, contenido, tipo_reporte, proyecto_id) values (?,?,?,?,?) [22001-172]
+03-04 15:45:21 jdbc[62]: exception
+org.h2.jdbc.JdbcSQLException: Parametro "#3" no está fijado
+Parameter "#3" is not set; SQL statement:
+delete from recursos where (proyecto_id) in ((?,?),(?,?))  [90012-172]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:80)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:163)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:78)
+	at org.h2.command.Command.executeUpdate(Command.java:235)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:154)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:140)
+	at com.jolbox.bonecp.PreparedStatementHandle.executeUpdate(PreparedStatementHandle.java:205)
+	at com.avaje.ebeaninternal.server.persist.ExeUpdateSql.execute(ExeUpdateSql.java:68)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersistExecute.executeSqlUpdate(DefaultPersistExecute.java:115)
+	at com.avaje.ebeaninternal.server.core.PersistRequestUpdateSql.executeNow(PersistRequestUpdateSql.java:44)
+	at com.avaje.ebeaninternal.server.core.PersistRequest.executeStatement(PersistRequest.java:74)
+	at com.avaje.ebeaninternal.server.core.PersistRequestUpdateSql.executeOrQueue(PersistRequestUpdateSql.java:49)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.executeSqlUpdate(DefaultPersister.java:139)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.delete(DefaultPersister.java:507)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.deleteManyDetails(DefaultPersister.java:1124)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.deleteAssocMany(DefaultPersister.java:1091)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.delete(DefaultPersister.java:572)
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.delete(DefaultPersister.java:400)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.delete(DefaultServer.java:1825)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.delete(DefaultServer.java:1815)
+	at com.avaje.ebean.Ebean.delete(Ebean.java:596)
+	at play.db.ebean.Model.delete(Model.java:167)
+	at controllers.Normal.borrarMiembro(Normal.java:394)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$65$$anonfun$apply$65.apply(routes_routing.scala:865)
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$65$$anonfun$apply$65.apply(routes_routing.scala:865)
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183)
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91)
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)

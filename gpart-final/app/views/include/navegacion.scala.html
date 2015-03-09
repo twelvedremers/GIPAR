@@ -1,0 +1,78 @@
+@(tipo:Integer)
+
+@if(session.get("username")==null){
+
+         <div class="navbar navbar-inverse header" role="navigation" class"navegacion">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                <a class="navbar-brand" href="@routes.principal.inicio">GIPAR</a>
+          </div>
+          <div class="navbar-collapse collapse navbar-responsive-collapse">
+              <ul class="nav navbar-nav navbar-right" >
+                  <li class="lista"><a href="@routes.principal.login">Iniciar</a></li>
+                <li><a href="@routes.Normal.Listar_articulos">Novedades</a></li>
+              </ul>
+          </div>
+      </div>
+
+} else{
+
+
+       <!-- Barra de Navegacion-->
+     
+<div class="navbar navbar-inverse inm" role="navigation" class="navegacion">
+		    <div class="navbar-header">
+		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		          <span class="icon-bar"></span>
+		          <span class="icon-bar"></span>
+		          <span class="icon-bar"></span>
+		        </button>
+		        <a class="navbar-brand" href="@routes.principal.inicio">GIPAR </a>
+
+		    </div>
+		    <div class="navbar-collapse collapse navbar-responsive-collapse">
+
+
+		        <ul class="nav navbar-nav navbar-right">
+		        @if( session.get("foto_url")==null  || session.get("foto_url")== "" || session.get("foto_url")== "null"){
+		        <li><img src= "@routes.Assets.at("images/robot19-gipar-der.png")" alt="" class="img-thumbnail"></li>} else {
+
+		        <li><img src= "@routes.Assets.at(session.get("foto_url"))"  alt="" class="img-thumbnail"></li>
+		        }
+
+		            <li class="dropdown">
+		              <a  class="dropdown-toggle" data-toggle="dropdown">@session.get("nombre") @session.get("apellidos")<b class="caret"></b></a>
+		              <ul class="dropdown-menu">
+		              <li><a href="@routes.Normal.verMiembro(Integer.parseInt(session.get("cod_G"))) ">perfil</a></li>		              
+		              <li><a href="@routes.Normal.confi(Integer.parseInt(session.get("cod_G")))">Configuración</a></li>	
+		              <li><a href="@routes.principal.salir">Salir</a></li>		              		
+		              </ul>
+		            </li>
+		            @if(tipo==2 && session.get("nivel_A")!="Normal"){
+		            <li><a href="@routes.Cordinador.registro">Registrar Miembros</a></li>
+		            }
+		            @if(tipo==1 && session.get("nivel_A")!="Normal"){
+		            <li><a href="@routes.Normal.RegistroAr">Crear Articulos</a></li>
+		            }
+		            @if(tipo==4 && session.get("nivel_A")!="Normal"){
+		            <li><a href="@routes.proyectos_Controlador.RegistroP">Crear Proyecto</a></li>
+		            }
+		            @if(tipo==3 && session.get("nivel_A")!="Normal"){
+		            <li><a href="@routes.proyectos_Controlador.RegistroE">Crear eventos</a></li>
+		            }
+		             @if(tipo==5 && session.get("nivel_A")!="Normal"){
+		            <li><a href="@routes.proyectos_Controlador.RegistrarReuniones">Registrar Reunion</a></li>
+		            }
+		             @if(tipo==8 &&(session.get("nivel_A")=="Administrador" || Miembro.find.byId(Integer.parseInt(session.get("cod_G"))).Elcoordina())){
+		            <li><a href="@routes.principal.ReportesPersonalMensual(Integer.parseInt(session.get("cod_G")))">crear Reporte</a></li>
+		            }
+		            
+		            <li><a href="@routes.principal.perfil">Inicio</a></li>
+		        </ul>
+		    </div>
+		</div>
+}

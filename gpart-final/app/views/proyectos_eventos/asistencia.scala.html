@@ -1,0 +1,26 @@
+ @(formulario:Form[Formulario],miembros:Map[Miembro, Boolean],id:Integer,tipo:Integer)
+
+@import helper._
+@import bootstrap3._
+
+@main("Descripcion_proyecto",0){
+<body class="perfil">
+<div class="contenedor-de-reuniones">
+@form(routes.proyectos_Controlador.AsistenciaN(id,tipo)){
+
+@if(tipo!=3){
+   @checkboxesT(formulario("asistido"),miembros)
+}
+
+   @if(tipo==1 || tipo==3){
+    <label>descripcion del reporte</label>
+    @textareaB(formulario("contenido"),"4")
+    <br>
+
+   }
+		<button type="submit" id="submit" class="btn btn-primary ">Registrar</button>
+
+		}
+	</div>
+</body>
+}

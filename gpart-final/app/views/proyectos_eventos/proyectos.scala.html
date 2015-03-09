@@ -1,0 +1,70 @@
+@(lista: List[Proyecto],formu:Form[Formulario],temas:List[String])
+
+
+@import helper._
+@import bootstrap3._
+
+@main("Proyectos GIPAR",4){
+  <body class="perfil">
+
+ <div class="content_white">
+
+	  <h2>Proyectos! </h2>
+
+	  <p>Todas las actividades del GIPAR en una sola pagina.</p>
+
+	</div>
+
+
+@if(lista.size()>0){
+@form(routes.proyectos_Controlador.ListarTemaP()) {
+<form action="" method="POST">
+	        <div class="input-group">
+	          
+	            <span class="input-group-btn">
+	             
+	             <button type="submit" id="submit" class="btn btn-primary ">buscar</button>
+	            </span>
+	             @selector(formu("area"),temas)
+	        </div>
+	</form>
+    }
+    <br>
+  }
+
+    <!--  programa           -->
+    <div class="cuerpo-de-articulos" style="    overflow: onl">
+     @for(proyecto <- lista){
+
+<div class="jumbotron1">
+		  <h2 class="text-center" > <b>@proyecto.nombre</b></h2>
+		  <br>
+		  <p class="text-center">
+		    @proyecto.descripcion
+		  </p>
+		 <h4  class="text-center">estado: <span style="color:@proyecto.C_estado()"><b>@proyecto.estado</b></span></h4> 
+		 <br>
+
+             @if(session.get("username")!=null){
+              <a href="@routes.proyectos_Controlador.Ver(proyecto.id)" class="btn btn-success" role="button">Mas información</a>
+               
+		     @if((session.get("nivel_A")!="Normal" || proyecto.coordinador.cod_G==Integer.parseInt(session.get("cod_G"))) && proyecto.C_estado().compareTo("green")==0){
+              <a href="@routes.proyectos_Controlador.agregarProyecto(proyecto.id,1)" class="btn btn-primary" role="button">Modificar Proyecto</a>
+
+		     }
+		  }
+		</div>
+      
+
+
+
+}
+
+
+
+
+
+</div>
+  </body>
+
+}

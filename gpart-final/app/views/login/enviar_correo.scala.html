@@ -1,0 +1,37 @@
+@(formulario:Form[Formulario],lista:List[String])
+
+
+
+@import views.html.include._
+@import helper._
+@import bootstrap3._
+
+@main("Mensajeria",0){
+<body class="perfil">
+
+	<section class="registro">
+		<form action="" method="post">
+			<legend class="text-center">@if(flash.containsKey("invalid")) {
+	<p style="color: red">
+		@flash.get("invalid")
+	</p>
+}</legend>
+
+	@form(routes.principal.enviarCorreo() ){
+			<div class="form-group">
+				<label>Seleccione al grupo al quien mandar</label>
+				@selector(formulario("area"),lista,true)
+
+				<label>Asunto</label>
+				@text(formulario("titulo"))
+
+				<label>Mensaje</label>
+				@textareaB(formulario("contenido"),"5")
+				<br>
+			</div>
+			<button type="submit" class="btn btn-primary btn-block">Enviar</button>
+		</form>
+		}
+	</section>
+</body>
+}

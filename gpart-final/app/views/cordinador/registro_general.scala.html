@@ -1,0 +1,57 @@
+@(formulario:Form[Login],lista_boton1:List[String],lista_boton2:List[String])
+
+@import views.html.include._
+@import helper._
+@import bootstrap3._
+
+
+@main("Registro de miembro",0){
+<body class="fondo-elec-gris">
+<!-- Barra de Navegacion-->
+
+
+
+@form(routes.Cordinador.registroS()) {
+
+
+	 
+
+	
+
+
+
+<section class="registro">
+
+ <legend class="text-center">	@if(flash.containsKey("invalid")) {
+	<p style="color: red">
+		@flash.get("invalid")
+	</p>
+}</legend>
+
+	<form action="" method="post">
+		<div class="form-group">
+			<label>Username </label>
+			@text(formulario("usuario"),placeholder = "username")
+			<label>contraseña</label>
+			@password(formulario("contraseña_new"),placeholder = "contraseña")     
+			<label>repita la contraseña</label>
+			@password(formulario("contraseña_rep"),placeholder = "contraseña") 
+		
+			<label>tipo de miembro</label>
+			@radiobuttons(formulario("tipo"),lista_boton1)
+			<br>
+			<label>nivel de acceso</label>
+			@radiobuttons(formulario("acceso"),lista_boton2)
+            <br>
+          
+<br>
+		</div>
+		
+		<button type="submit" id="submit" class="btn btn-primary btn-block">siguiente</button>
+	</form>
+
+	}
+</section>
+
+</body>
+}

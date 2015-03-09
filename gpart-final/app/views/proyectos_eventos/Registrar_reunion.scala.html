@@ -1,0 +1,43 @@
+@(formulario:Form[Formulario],siguiente:Miembro)
+
+
+@import views.html.include._
+@import helper._
+@import bootstrap3._
+
+
+@main("Registro de Evento",6){
+
+@form(routes.proyectos_Controlador.Registrar()) {
+	
+	
+}
+
+<body class="fondo-elec-gris">
+	<section class="registro">
+	<form action="" method="post">
+		<legend class="text-center">@if(flash.containsKey("invalid")) {
+	<p style="color: red">
+		@flash.get("invalid")
+	</p>
+}</legend>
+
+@form(routes.proyectos_Controlador.Registrar()) {
+		<div class="form-group">
+			<label>Tema Principal</label>
+		       @text(formulario("titulo"),placeholder = "tema principal")
+
+		      <label>Fecha propuesta</label>
+		       @textFecha(formulario("desde"))
+           		<br>
+
+		        <label>El proximo Moderador sera el miembro</label>
+                <p> @siguiente.nombreCompleto()</p>
+
+		</div>
+		<button type="submit" class="btn btn-primary btn-block">Siguiente</button>
+	</form>
+	}
+</section>
+</body>
+}

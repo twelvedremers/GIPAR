@@ -1,0 +1,122 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# principal
+GET       /                         controllers.principal.index()
+POST     /                           controllers.principal.index()
+GET      /inicio                    controllers.principal.inicio()
+GET     /acerca                     controllers.principal.acerca()
+GET     /salir                        controllers.principal.salir()
+GET     /login                      controllers.principal.login()
+POST    /login                      controllers.principal.ingresar()
+POST    /Correos/                 controllers.principal.enviarCorreo()
+GET     /Correos/                 controllers.principal.Correo()
+GET     /identidad/:id            controllers.principal.GenerarReporte(id:Integer)
+#paginas de articulos
+
+GET     /novedades                  controllers.Normal.Listar_articulos()
+POST    /novedades                  controllers.Normal.Listar_articulosT()
+GET     /novedades/Vista/:id        controllers.Normal.ver(id:Integer)
+GET     /novedades/Crear            controllers.Normal.RegistroAr()
+POST    /novedades/Crear            controllers.Normal.RegistrarAr()
+GET    /novedades/borrar/:id            controllers.Normal.borrarA(id:Integer)
+
+#paginas de proyectos y eventos
+
+GET     /actualizar/reporte/:t   controllers.proyectos_Controlador.actualizar(id:Integer,t:Integer)
+
+GET     /modificar/proyecto/general/:id/:t   controllers.proyectos_Controlador.modificarGeneral(id:Integer,t:Integer)
+
+POST   /modificar/proyecto/general/:id/:t   controllers.proyectos_Controlador.CambioGeneral(id:Integer,t:Integer)
+
+GET     /proyectos                      controllers.proyectos_Controlador.ListarProyectos()
+POST    /proyectos                      controllers.proyectos_Controlador.ListarTemaP()
+GET     /proyectos/:id                  controllers.proyectos_Controlador.Ver(id:Integer)
+GET     /eventos                        controllers.proyectos_Controlador.ListarEventos()
+POST    /eventos                        controllers.proyectos_Controlador.ListarTemaE()
+GET     /eventos/:id                    controllers.proyectos_Controlador.VerE(id:Integer)
+GET     /proyectos/formulario/nuevo     controllers.proyectos_Controlador.RegistroP()
+POST    /proyectos/formulario/nuevo     controllers.proyectos_Controlador.RegistrarP()
+GET     /Eventos/formulario/nuevo       controllers.proyectos_Controlador.RegistroE()
+POST    /Eventos/formulario/nuevo       controllers.proyectos_Controlador.RegistrarE()
+GET  /formulario/:id/:t     controllers.proyectos_Controlador.agregarProyecto(id:Integer,t:Integer)
+POST /formulario/Planif/:id   controllers.proyectos_Controlador.registrarPlanificacion(id:Integer,t:Integer)
+POST /formulario/miembros/:id   controllers.proyectos_Controlador.Participantes(id:Integer,t:Integer)
+POST /formulario/recurso/:id   controllers.proyectos_Controlador.registrarRecurso(id:Integer,t:Integer)
+
+GET    /Proyectos/borrar/:id/   controllers.proyectos_Controlador.borrarP(id:Integer)
+GET    /eventos/borrar/:id/     controllers.proyectos_Controlador.borrarE(id:Integer)
+
+GET    /borrar/Participantes/:id/:t   controllers.proyectos_Controlador.borrarPM(id:Integer,t:Integer)
+GET    /borrar/planificacion/:id/:t   controllers.proyectos_Controlador.borrarPP(id:Integer,t:Integer)
+
+POST /formulario/reconocimiento/:id   controllers.proyectos_Controlador.registrarPremio(id:Integer,t:Integer)
+
+#paginas de usuarios
+
+GET     /logeado                      controllers.principal.perfil()
+GET     /configuracion                 controllers.Normal.confi(id:Integer)  
+GET     /coordinador/miembro        controllers.Normal.Lista_miembro() 
+POST    /coordinador/miembro        controllers.Normal.buscaC() 
+GET     /coordinador/miembro/ver/:id        controllers.Normal.verMiembro(id:Integer) 
+GET     /coordinador/asistencia/:id        controllers.proyectos_Controlador.MostrarAsistencia(id:Integer,t:Integer) 
+POST     /coordinador/asistencia/registrar/:id        controllers.proyectos_Controlador.AsistenciaN(id:Integer,t:Integer) 
+
+POST     /configuracion/:id    controllers.Normal.ModificarDatos(id:Integer) 
+POST     /configuracion/personal/:id   controllers.Normal.ModificarPersonal(id:Integer) 
+
+#paginas de reunion
+
+
+
+GET     /Reuniones                    controllers.proyectos_Controlador.ListarReuniones()
+GET     /Reuniones/ver/:id          controllers.proyectos_Controlador.verReuniones(id:Integer)
+GET    /Reuniones/borrar/:id/    controllers.proyectos_Controlador.borrarR(id:Integer)
+GET    /Reuniones/borrar/PF/:id/    controllers.proyectos_Controlador.borrarPF(id:Integer,p:String)
+GET    /Reuniones/borrar/PV/:id/    controllers.proyectos_Controlador.borrarPV(id:Integer,p:String)
+
+GET     /Reuniones/formulario/crear    controllers.proyectos_Controlador.RegistrarReuniones()
+
+POST   /Reuniones/formulario/crear    controllers.proyectos_Controlador.Registrar()
+
+GET   /Reuniones/formulario/crear/general  controllers.proyectos_Controlador.registro_extraReunion(id:Integer)
+
+POST /Reuniones/formulario/crear/general/:id controllers.proyectos_Controlador.registrarPunto(id:Integer)
+
+
+
+
+
+#paginas de registros
+
+GET     /Registro                               controllers.Cordinador.registro()
+POST    /Registro                               controllers.Cordinador.registroS()
+GET     /Registro/estudiantes                  controllers.Cordinador.registroE()
+POST    /Registro/estudiantes                  controllers.Cordinador.registrarE()
+GET     /Registro/profesor                     controllers.Cordinador.registroP()
+POST    /Registro/profesor                     controllers.Cordinador.registrarP()
+GET     /Registro/Egresado                     controllers.Cordinador.registroEg()
+POST    /Registro/Egresado                      controllers.Cordinador.registrarEg()
+GET     /Registro/borrar/persona/:id       controllers.Normal.borrarMiembro(id:Integer)
+GET     /Registro/borrar/telf/:id          controllers.Normal.borrarTelefono(id:Integer,p:String)
+GET     /Registro/borrar/dispo/:id          controllers.Normal.borrarDisponibilidad(dia:String,hora:Integer,id:Integer)
+
+GET    /Registro/:id/modificar                    controllers.Cordinador.ModificarM(id:Integer)
+POST    /Registro/:id/modificar/telf             controllers.Cordinador.registrarTelf(id:Integer)
+POST    /Registro/:id/modificar/Prog             controllers.Cordinador.registrardispo(id:Integer)
+GET    /Registro/:id/modificar/Prog             controllers.Cordinador.Desactivar(id:Integer)
+
+#paginas de reporte o utilidades para el cordinador
+
+GET    /Reportes/lista                     controllers.principal.Reporte()
+GET    /Reportes/Vista/:id                 controllers.principal.VerReporte(id:Integer)
+POST   /Reportes/lista                     controllers.principal.TemasReporte()
+GET    /Reportes/Crear/:id                 controllers.principal.ReportesPersonalMensual(id:Integer)
+POST   /Reportes/Creado/                   controllers.principal.CrearReporteM()
+GET    /Reportes/Borrar/:id                controllers.principal.BorrarReporte(id:Integer)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+

@@ -1,0 +1,56 @@
+@(formulario:Form[Login],lista_boton:List[String])
+
+@import views.html.include._
+@import helper._
+@import bootstrap3._
+
+@main("Registro de Egresado",0){
+<body class="fondo-elec-gris">
+<!-- Barra de Navegacion-->
+
+ <legend class="text-center">	@if(flash.containsKey("invalid")) {
+	<p style="color: red">
+		@flash.get("invalid")
+	</p>
+}</legend>
+
+
+     @form(routes.Cordinador.registrarEg() , 'enctype -> "multipart/form-data") {
+<section class="registro">
+  <form action="" method="post">
+    <legend class="text-center"><img src="#" alt="" style="max-width: 100%;"></legend>
+    <div class="form-group">
+ 	<label>Nombre</label>
+	@text(formulario("nombre"),placeholder = "nombre")
+	<label>Apellido</label>
+	@text(formulario("apellidos"),placeholder = "apellidos")
+
+	  <label>Correo</label>
+	  @correo(formulario("correo"),placeholder = "correo")
+      <label>Ocupación</label>
+      @text(formulario("ocupacion"),placeholder = "ocupacion")
+      <label>Area de especialidad</label>
+      @text(formulario("area"),placeholder = "Area de especialidad")
+      <label>Cedula de identidad</label>
+      @text(formulario("cedula"),placeholder = "cedula de identidad")
+      <label>Telefono</label>
+      @text(formulario("telefono"),placeholder = "telefono")
+       
+         <label>foto de perfil</label>
+            <input type="file" name="foto_perfil" accept="image/jpg, image/png">
+            <label>area de interes</label>
+			@text(formulario("interes"),placeholder = "area de interes")
+
+		<label>Sexo</label>
+            @radiobuttons(formulario("sexo"),lista_boton)
+            <br>
+
+    </div>
+    <button type="submit"  id="submit" class="btn btn-primary btn-block">Registrar</button>
+  </form>
+  }
+</section>
+
+
+</body>
+}

@@ -1,0 +1,172 @@
+@(lista:List[Reunion],proximos:List[Reunion],viejos:List[Reunion])
+
+@import views.html.include._
+
+@main("Reuniones del GIPAR",5){
+<body>
+
+	<br>
+
+	<div class="contenedor-de-proyectos">
+
+	    <table class="table table-striped table-hover ">
+		  <h3 class="tabla"><b>Las Reuniones de esta semana!</b></h3>
+	 @if(proximos.size()>0){
+		  <thead>
+		    <tr>
+		      <th>Numero de reunion</th>
+		      <th>Temas previstos para la reunion</th>
+		      <th>Fecha prevista</th>
+		      <th>Coordinador</th>
+		      <th>Estado</th>
+		      <th></th>
+		      <th></th>
+		      @if(session.get("nivel_A")!="Normal" ){
+		      	<th></th>
+		      }
+		    </tr>
+		  </thead>
+		  <tbody>
+	@for(reunion <- proximos){
+		    <tr>
+		      <td>@reunion.n_Reunion</td>
+		      <td>
+		      	<ul>
+		      		@for(puntos <- reunion.pt_fijos){
+                    	 <li>@puntos.punto.punto</li>
+					}
+		      	</ul>
+		      </td>
+		      @if(reunion.fecha_Reunion!=null){
+		      		<td>@reunion.fecha_Reunion</td>
+		      } else { <td>fecha no asignada</td>}
+		      <td>@reunion.miembro.nombreCompleto()</td>
+		      @if(reunion.Cumplida()=="green"){
+		      			<td style="color:@reunion.Cumplida()">realizada</td>
+		      	} else {
+ 						<td style="color:@reunion.Cumplida()">no realizada</td>
+		      	}
+
+		      <td><a href="@routes.proyectos_Controlador.verReuniones(reunion.n_Reunion)" class="btn btn-primary btn-xs">Ver</a></td>
+
+		     @if((session.get("nivel_A")!="Normal"  || reunion.miembro.cod_G==Integer.parseInt(session.get("cod_G"))) && reunion.Cumplida()=="red" ){
+		      		<td><a href="@routes.proyectos_Controlador.registro_extraReunion(reunion.n_Reunion)" class="btn btn-primary btn-xs">Editar</a></td>} 
+		      		
+		      @if(session.get("nivel_A")=="Administrador" ){
+		      		<td><a href="@routes.proyectos_Controlador.borrarR(reunion.n_Reunion)" class="btn btn-primary btn-xs">borrar</a></td>
+		      }
+		      
+		    </tr>
+		  }  
+		  </tbody>
+		  }else{
+		  	 <h4 class="tabla">Esta semana no hay reuniones registrada</h4>
+
+		  }
+
+		</table> 
+
+			<br>
+     	<br>
+     	
+		<table class="table table-striped table-hover ">
+		  <h3 class="tabla"><b>Proximas reuniones </b></h3>
+		   @if(lista.size()>0){
+		  <thead>
+		    <tr>
+		      <th>Numero de reunion</th>
+		      <th>Temas previstos para la reunion</th>
+		      <th>Fecha prevista</th>
+		      <th>Coordinador</th>
+		      <th>Estado</th>
+		      <th></th>
+		      <th></th>
+		      @if(session.get("nivel_A")!="Normal" ){
+		      	<th></th>
+		      }
+		    </tr>
+		  </thead>
+		  <tbody>
+	@for(reunion <- lista){
+		    <tr>
+		      <td>@reunion.n_Reunion</td>
+		      <td>
+		      	<ul>
+		      		@for(puntos <- reunion.pt_fijos){
+                    	 <li>@puntos.punto.punto</li>
+					}
+		      	</ul>
+		      </td>
+		      @if(reunion.fecha_Reunion!=null){
+		      		<td>@reunion.fecha_Reunion</td>
+		      } else { <td>fecha no asignada</td>}
+		      <td>@reunion.miembro.nombreCompleto()</td>
+		      @if(reunion.Cumplida()=="green"){
+		      			<td style="color:@reunion.Cumplida()">realizada</td>
+		      	} else {
+ 						<td style="color:@reunion.Cumplida()">no realizada</td>
+		      	}
+
+		      <td><a href="@routes.proyectos_Controlador.verReuniones(reunion.n_Reunion)" class="btn btn-primary btn-xs">Ver</a></td>
+
+		     @if((session.get("nivel_A")!="Normal"  || reunion.miembro.cod_G==Integer.parseInt(session.get("cod_G"))) && reunion.Cumplida()=="red" ){
+		      		<td><a href="@routes.proyectos_Controlador.registro_extraReunion(reunion.n_Reunion)" class="btn btn-primary btn-xs">Editar</a></td>} 
+		      		
+		      @if(session.get("nivel_A")=="Administrador" ){
+		      		<td><a href="@routes.proyectos_Controlador.borrarR(reunion.n_Reunion)" class="btn btn-danger btn-xs">borrar</a></td>
+		      }
+		      
+		    </tr>
+		  }  
+		  </tbody>}else{
+
+		   <h4 class="tabla">No hay reuniones proximas</h4>
+		  }
+		</table> 
+
+     	<br>
+     	<br>
+
+		<table class="table table-striped table-hover ">
+		  <h3 class="tabla"><b>Historial </b></h3>
+		  <thead>
+		    <tr>
+		      <th>Numero de reunion</th>
+		      <th>Temas previstos para la reunion</th>
+		      <th>Fecha prevista</th>
+		      <th>Coordinador</th>
+		       <th></th>
+		        @if(session.get("nivel_A")=="Administrador" ){
+		      		<th></th>
+		      }
+		   
+		    </tr>
+		  </thead>
+		  <tbody>
+	@for(reunion <- viejos){
+		    <tr>
+		      <td>@reunion.n_Reunion</td>
+		      <td>
+		      	<ul>
+		      		@for(puntos <- reunion.pt_fijos){
+                    	 <li>@puntos.punto.punto</li>
+					}
+		      	</ul>
+		      </td>
+		      @if(reunion.fecha_Reunion!=null){
+		      		<td>@reunion.fecha_Reunion</td>
+		      } else { <td>fecha no asignada</td>}
+		      <td>@reunion.miembro.nombreCompleto()</td>
+		     
+		      <td><a href="@routes.proyectos_Controlador.verReuniones(reunion.n_Reunion)" class="btn btn-primary btn-xs">   Ver   </a></td>
+		      @if(session.get("nivel_A")=="Administrador" ){
+		      		<td><a href="@routes.proyectos_Controlador.borrarR(reunion.n_Reunion)" class="btn btn-primary btn-xs">borrar</a></td>
+		      }
+		    </tr>
+		  }  
+		  </tbody>
+		</table> 
+		</div>
+		
+</body>
+}

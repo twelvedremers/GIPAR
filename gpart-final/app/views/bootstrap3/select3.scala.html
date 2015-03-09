@@ -1,0 +1,20 @@
+@(field: Field,opciones:List[Evento])
+
+  <div class="form-group @if(field.hasErrors) {has-error}">
+   
+      <select
+        class="form-control"
+        id="@field.id"
+        name="@field.name"
+        <option id="todos" value="todos" requiered="">
+        @for(optionName <- opciones) {
+         <option id="@optionName" value="@optionName.id_Evento">@optionName.proyecto.getNombre()</option>
+        }
+          <option id="id" value="">ninguno</option>
+      </select>
+         
+          
+
+
+  </div>
+

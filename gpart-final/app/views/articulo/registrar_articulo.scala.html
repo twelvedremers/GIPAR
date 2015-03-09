@@ -1,0 +1,44 @@
+@(formulario:Form[Formulario],opciones:Map[String,String],Eventos:List[Evento])
+
+@import helper._
+@import bootstrap3._
+
+@main("registro de articulo",6){
+<body class="fondo-elec-gris">
+	<section class="registro">
+@form(routes.Normal.RegistrarAr()) {
+  <form action="" method="post">
+    <legend class="text-center"> @if(flash.containsKey("invalid")) {
+	<p style="color: red">
+		@flash.get("invalid")
+	</p>
+}</legend>
+
+    <div class="form-group">
+      <label>Ttulo</label>
+      @text(formulario("titulo"),"titulo")
+      
+      <label>Contenido</label>
+       @textareaB(formulario("contenido"),"4")
+      
+      <label>Area</label>
+      @text(formulario("area"),"Area")
+
+      <label> Escritores</label>
+        @selectMultiple(formulario("escritores"),
+          optionMap = opciones,
+          isMultiple = true)
+
+      <label>Evento donde se presentara (opcional)</label>
+        @select3(formulario("evento"),Eventos)  
+
+
+
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+  </form>
+  }
+</section>
+</body>
+
+}

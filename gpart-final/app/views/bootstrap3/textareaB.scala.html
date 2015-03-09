@@ -1,0 +1,10 @@
+@(field: Field, rows: String = "3",obligatorio:Boolean = true)
+   <textarea class="form-control"
+                rows="@rows" 
+                id="@field.id" 
+                name="@field.name" 
+                placeholder="" 
+                 @if(obligatorio) {required=""} 
+                >@field.value.getOrElse("")</textarea>
+  
+

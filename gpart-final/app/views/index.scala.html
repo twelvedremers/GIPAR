@@ -1,0 +1,42 @@
+
+@import views.html.include._
+
+@main("pagina principal del GIPAR",0){
+	
+ <body>
+ 
+  <!-- header informacion-->
+      <div  class="jumbotron">
+          <a href="@routes.principal.acerca" class="btn btn-primary" role="button">Mas información</a>
+      </div>
+
+  <!-- Bootstrap JavaScript -->
+      <div class="container">
+        <div class="row informacion-principal">
+
+            <div class="col-sm-4">
+              <div class="thumbnail">
+                <h3>Novedades</h3>
+                <a href="@routes.Normal.Listar_articulos"><img src="@routes.Assets.at("/images/estadistica1.png")" alt="..."></a>
+              </div>
+            </div>
+
+
+            <div class="col-sm-4">
+              <div class="thumbnail">
+                <h3>Proyectos</h3>
+                <a href="@routes.proyectos_Controlador.ListarProyectos"><img src="@routes.Assets.at("/images/proyecto1.png")" alt="..."></a>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="thumbnail">
+                <h3>Eventos</h3>
+                <a href=" @routes.proyectos_Controlador.ListarEventos"> <img src="@routes.Assets.at("/images/proyecto2.png")" alt="..."></a>
+              </div>
+            </div>
+      </div>
+    </div>
+  
+  </body>
+
+}

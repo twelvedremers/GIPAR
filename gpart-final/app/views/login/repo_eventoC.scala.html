@@ -1,0 +1,89 @@
+@(proyecto:Proyecto,repo:Reporte,contenido:String,tipo: Integer = 0)
+
+@import views.html.include._
+
+@main("Reporte Final de Proyecto",0){
+<body class="perfil">
+
+<div class="content_white">
+@if(tipo!=1){
+  <h2>Reportes! Evento</h2>
+} else {
+	  <h2>Reporte Mensual del proyecto</h2>
+
+}
+</div>
+<div class="cuerpo-reportes">
+	<h4>Nombre:<b> @proyecto.getNombre()</b></h4>
+	<h4>Fecha:@repo.fecha</b></h4>
+
+@if(tipo==1){
+
+	<h4>Fecha Planeada:@proyecto.tiempo_estimado</b></h4>
+	<h4>dias restantes:@proyecto.falta(repo.fecha) dias</b></h4>
+
+}
+	<br>
+    <p>@contenido</p>
+    <br>
+@if(tipo!=1){
+		<table class="table table-striped table-hover ">
+			  <h4 class="tabla"> Fecha</h4>
+			  <thead>
+			    <tr>
+			      <th></th>
+			      <th>Fecha Planificada</th>
+			      <th>Fecha Real</th>
+			      <th>Tardanza</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			@for(programacion <- Programacion.findProgramacion(proyecto)){
+			    <tr>
+				     <td></td>
+				     <td>@programacion.fecha_programada_inicial</td>
+				    @if(programacion.fecha_Real!=null){
+				      	<td>@programacion.fecha_Real</td>
+				     }else{
+	                  	<td>no se realizo</td>
+				      }
+				    <td>@programacion.Diferencia()</td>
+			    </tr>
+			    }
+			     <tr>
+			      <td><b>Total</b></td>
+			      <td>@proyecto.tiempo_estimado</td>
+			      <td>@repo.fecha</td>
+			      <td>@proyecto.DiferenciaT()</td>
+			    </tr>
+			  </tbody>
+			</table> 
+     <br>
+     @if(Programacion.NProgramacion(proyecto)!=0){
+     <h4>Porcentaje de eficiencia: @((Programacion.NPFrogramacion(proyecto)/Programacion.NProgramacion(proyecto))*100)</h4>}else{
+     <h4>Porcentaje de eficiencia: 100%</h4>
+
+     }
+     @if(Asistencia_Evento.buscarAsistencia(proyecto).size()!=0){
+     <h4>Porcentaje de Responsabilidad: @((Asistencia_Proyecto.numeroFA(proyecto)/(Asistencia_Evento.buscarAsistencia(proyecto).size()*1.00)*100)) %</h4>}else{
+      <h4>Porcentaje de Responsabilidad: 0%</h4>
+
+     }
+     }
+<h4>Numero de actividades Propuestas:@Programacion.NProgramacion(proyecto)</h4>
+	<h4>Numero de actividades finalizadas:@Programacion.NPFrogramacion(proyecto)</h4>
+
+@if(tipo!=1){
+	<h4>Numero de participantes Inicial:@Asistencia_Evento.buscarAsistencia(proyecto).size()</h4>
+	<h4>Numero de participantes Final:@Asistencia_Proyecto.numeroFA(proyecto)</h4>
+	} else{
+
+	<h4>Numero de participantes actuales:@Asistencia_Evento.buscarAsistencia(proyecto).size()</h4>
+
+	}
+	<h4>Numero de Reconocimientos:@proyecto.premios.size()</h4>
+
+	</div>
+
+</body>
+}

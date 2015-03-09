@@ -1,0 +1,215 @@
+@(proyecto:Evento,lista:List[Recursos],lista1:List[Reconocimiento],lista2:List[Asistencia_Evento],lista3:List[Programacion],lista4:List[Asistencia_Proyecto])
+
+
+@import views.html.include._
+
+@main("Descripcion de evento",3){
+  <body class="perfil">
+  <!-- Barra de Navegacion-->
+
+
+    <!--  programa           -->
+<div class="contenedor-de-proyectos">
+  <div class="texto">
+		<h3 >Titulo <b style="color:green"> @proyecto.proyecto.getNombre()</b></h3><br><br>
+		<h3>fecha:  <span style="color:@proyecto.proyecto.C_estado()">@proyecto.proyecto.getEstimado()</span></h3><br><br>
+        <h3>Ubicacion </h3>
+		<h4>@proyecto.ubicacion </h4><br><br>
+		<h3>Area</h3>
+		<h4>@proyecto.proyecto.area  </h4><br><br>
+		<h3>Descripcion </h3><br>
+		<h4>@proyecto.proyecto.descripcion</h4><br><br>
+		 @if(session.get("nivel_A")!="Normal"){
+         <h3>Costo total</h3>
+		<h4>@proyecto.costo_total bs.f</h4><br><br>
+        }
+		<h3>Recursos</h3>
+<!--parte donde se cargan todos los recursos-->
+		<ul>
+		@for(recursos <- lista){
+
+        <li>@recursos.recurso.recurso</li>
+                               }
+                         </ul> 
+         @if(lista1.size()!=0){
+
+        <h3>Reconocimientos</h3>
+
+<!--parte donde se cargan todos los reconocimientos-->
+		<ul>
+		@for(premio <- lista1){
+
+        <li>@premio.premio</li>
+                               }
+                         </ul> 
+         }
+
+<!--parte donde se muestra el coridnador-->
+		<h3>Coordinador </h3>
+        <h4>@proyecto.proyecto.coordinador.nombreCompleto() </h4><br><br>
+<br>
+</div>
+<!--Se carga la tabla de miembros-->
+
+		<table class="table table-striped table-hover ">
+		  <h3 class="tabla"><b>Planificacion</b></h3
+		  <thead>
+		    <tr>
+		      
+		      <th>Nombre</th>
+		      <th>Apellido</th>
+		      <th>Email </th>
+		      <th>Comision</th>
+		      @if(session.get("nivel_A")!="Normal" && proyecto.proyecto.C_estado()!="red"){
+               <th>opciones</th>
+		      }
+		    </tr>
+		  </thead>
+		  <tbody>
+@for(asistencia <- lista2){
+		     
+		     <tr>
+              <td>@asistencia.miembro.nombreS()</td>
+		      <td>@asistencia.miembro.apellidos</td>
+		      <td>@asistencia.miembro.correo</td>
+              <td>@asistencia.comision</td>
+		       @if((session.get("nivel_A")!="Normal" || proyecto.proyecto.coordinador.cod_G==Integer.parseInt(session.get("cod_G"))) && proyecto.proyecto.C_estado()!="red"){
+		      <td> <a href="@routes.proyectos_Controlador.borrarPM(proyecto.proyecto.id,asistencia.miembro.cod_G)" class="btn btn-primary btn-xs">borrar</a></td>}
+		       </tr>
+    }
+    
+      </tbody>
+		</table> 
+
+		
+		   
+		
+
+	     @if(lista2.size()==0 && session.get("nivel_A")=="Normal"){<p class="text-center">NO se ha planificado este evento </p>}
+		
+        
+
+     <br>
+
+
+<!--           Se carga la tabla de planificacion              -->
+
+
+	<table class="table table-striped table-hover ">
+		  <h3 class="tabla"><b>Cronograma</b></h3>
+		  <thead>
+		    <tr>
+		      
+		      <th>n°</th>
+		      <th>actividad</th>
+		      <th>desde</th>
+		      <th>hasta</th>
+		      <th>encargado</th>
+		      <th>estado</th>
+		      @if(session.get("nivel_A")!="Normal" && proyecto.proyecto.C_estado()!="red") {
+               <th></th>
+               <th></th>
+               
+		      }
+		    </tr>
+		  </thead>
+		  <tbody>	     
+		      @for(programa <- lista3){
+		  
+
+		     <tr>
+              <td>@programa.clave.id_programacion</td>
+		      <td>@programa.actividad</td>
+		      <td>@programa.getProgramacionI()</td>
+		      <td>@programa.getProgramacionF()</td>
+		      <td>@programa.encargado.nombreCompleto()</td>
+		      @if(programa.fecha_Real==null){ <td style="color:red">no completado</td>}else{
+              <td style="color:green">completado</td>}
+
+ @if((session.get("nivel_A")!="Normal" || proyecto.proyecto.coordinador.cod_G==Integer.parseInt(session.get("cod_G")))&& proyecto.proyecto.C_estado()!="red"){
+                @if(programa.fecha_Real==null){
+				     <td> <a href="@routes.proyectos_Controlador.borrarPP(proyecto.proyecto.id,programa.clave.id_programacion)" class="btn btn-danger btn-xs">Eliminar</a></td>
+		      <td><a href="@routes.proyectos_Controlador.actualizar(proyecto.proyecto.id,programa.clave.id_programacion)" class="btn btn-primary btn-xs">Actualizar</a></td>
+		      }else{
+				      <td>  </td>
+				      <td>  </td>
+				      }
+		      
+
+}
+ 
+		     </tr>
+            }    
+
+
+            		  </tbody>
+  </table> 
+
+	                 
+		   
+
+       @if(lista3.size()==0 && session.get("nivel_A")=="Normal"){<p class="text-center">Este Evento no esta planificado actualmente</p>}
+		
+
+ <br>
+
+
+<!--                               tabla de la asistencia del evento  -->
+
+
+
+	<table class="table table-striped table-hover ">
+		  <h3 class="tabla"><b>Asistencia</b></h3>
+		  <thead>
+		    <tr>
+		      
+		      <th>Nombre</th>
+		      <th>Apellido</th>
+		      <th>Email </th>
+		      <th>Estado</th>
+		    
+		    </tr>
+		  </thead>
+		  <tbody>
+	 
+@for(asistencia <- lista4){
+		     
+		     <tr>
+              <td>@asistencia.miembro.nombreS()</td>
+		      <td>@asistencia.miembro.apellidos</td>
+		      <td>@asistencia.miembro.correo</td>
+              <td style="color:@asistencia.estadoC()">@asistencia.estado()</td>
+
+		      
+
+		      }
+		      
+
+      </tbody>
+		</table> 
+
+      
+		   
+		
+	     @if(lista4.size()==0){<p class="text-center">Los resultados del evento no se han cargado</p>}
+		
+        
+
+     <br>
+
+
+
+
+
+ @if(session.get("nivel_A")=="Administrador" || proyecto.proyecto.coordinador.cod_G==Integer.parseInt(session.get("cod_G"))){
+ <a href="@routes.proyectos_Controlador.MostrarAsistencia(proyecto.proyecto.id,1)" class="btn btn-primary btn-xs">Finalizar Evento</a>
+  <a href="@routes.proyectos_Controlador.borrarE(proyecto.proyecto.id)" class="btn btn-danger btn-xs">borrar Evento</a>
+}
+
+
+
+
+	</div>
+  </body>
+
+}

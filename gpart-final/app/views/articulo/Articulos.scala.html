@@ -1,0 +1,73 @@
+@(lista: List[Articulo],formu:Form[Formulario],temas:List[String])
+
+
+@import helper._
+@import bootstrap3._
+
+@main("Articulos",1){
+
+<body class="perfil">
+	
+	<div class="content_white">
+
+	  <h2>Articulos!</h2>
+
+	  <p>Un conjunto de nuevos y novedosos articulos.</p>
+
+	</div>
+
+@if(lista.size()>0){
+
+
+
+@form(routes.Normal.Listar_articulosT()) {
+<form action="" method="POST">
+	        <div class="input-group">
+	         
+	            <span class="input-group-btn">
+	             
+	             <button type="submit" id="submit" class="btn btn-primary ">buscar</button>
+	            </span>
+	              @selector(formu("area"),temas)
+	        </div>
+	</form>
+    }
+    <br>
+  }
+  
+	<div class="cuerpo-de-articulos" style="    overflow: onl">
+
+<legend class="text-center">	@if(flash.containsKey("correct")) {
+	<p style="color: green">
+		@flash.get("correct")
+	</p>
+}</legend>
+
+@for(articulo <- lista){
+		<div class="jumbotron1">
+		  <h2 class="text-center"><b>@articulo.titulo</b></h2>
+		  <p class="text-center">
+		    @articulo.reseña()
+		  </p>
+		  <p>Escrito por:</p>
+
+		  <ul>
+			@for(escritor <- articulo.escritores){
+
+        <li>@escritor.nombreCompleto()</li>
+                               }
+                               </ul>
+		  <p><a class="btn btn-primary" href="@routes.Normal.ver(articulo.cod_Articulo)" role="button">Leer Más</a></p>
+		  
+		</div>
+}
+
+   
+
+
+
+
+
+	</div>
+</body>
+}

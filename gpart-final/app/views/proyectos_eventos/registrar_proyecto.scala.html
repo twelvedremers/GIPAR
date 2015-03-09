@@ -1,0 +1,48 @@
+@(formulario:Form[Formulario],lista:List[Miembro])
+
+
+@import views.html.include._
+@import helper._
+@import bootstrap3._
+
+
+@main("Registro de Proyecto",6){
+
+<body class="fondo-elec-gris">
+
+
+	<section class="registro">
+
+@form(routes.proyectos_Controlador.RegistrarP()) {
+  <form action="" method="post">
+    <legend class="text-center">@if(flash.containsKey("invalid")) {
+	<p style="color: red">
+		@flash.get("invalid")
+	</p>
+}</legend>
+    <div class="form-group">
+      <label>Ttulo</label>
+      @text(formulario("titulo"),placeholder = "titulo")
+
+      <label>Area</label>
+       @text(formulario("area"),placeholder = "area")
+
+      <label>Descripción</label>
+      @textareaB(formulario("contenido"),"4")
+
+      <label>Fecha limite</label>
+      @textFecha(formulario("hasta")) 
+
+      <label> Coordinador</label>
+    @selector2(formulario("cordinador"),lista)
+
+  
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Siguiente</button>
+  </form>
+  }
+</section>
+</body>
+
+
+}

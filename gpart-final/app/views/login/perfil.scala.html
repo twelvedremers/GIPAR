@@ -1,0 +1,124 @@
+@(elemento: Miembro,lista:List[Proyecto],lista2:List[Proyecto],lista3:List[Evento],lista4:List[Articulo])
+
+@import views.html.include._
+
+@main("perfil",0){
+
+
+<body class="perfil">	
+		
+
+<div class="cuerpo-de-perf">
+
+
+		<div class="paneles">
+			
+				<div class="panel panel-default">
+				  <div class="panel-heading">Actividades</div>
+				  	<div class="panel-body">
+				    	<ul class="list-group perfil-p1">
+				       		 <li class="list-group-item"><a href="@routes.proyectos_Controlador.ListarProyectos">Proyectos</a></li>
+				         	<li class="list-group-item"><a href="@routes.proyectos_Controlador.ListarEventos">Eventos</a></li>
+				        	<li class="list-group-item"><a href="@routes.Normal.Listar_articulos">Articulos</a></li>
+				        	 <li class="list-group-item"><a href="@routes.proyectos_Controlador.ListarReuniones">Reuniones</a></li>
+
+
+				       		 <li class="list-group-item"><a href="@routes.principal.Reporte">Reportes</a></li>
+				       		 
+							@if(session.get("nivel_A")=="Coordinador" || session.get("nivel_A")=="Administrador"){
+
+				        	 <li class="list-group-item"><a href="@routes.Normal.Lista_miembro">Miembros</a></li>
+				       		 <li class="list-group-item"><a href="@routes.principal.Correo">Correos</a></li>
+				        	}
+				       
+				        </ul>
+				  </div>
+				</div>
+     		 @if(session.get("nivel_A")=="Normal"){
+				<div class="panel panel-default">
+				  <div class="panel-heading">Participaciones @lista.size()</div>
+				  <div class="panel-body">
+		    			 @for(proyecto <- lista){
+				   			<li class="list-group-item"><a href="@routes.proyectos_Controlador.Ver(proyecto.id)">@proyecto.getNombre()</a></li>
+						}
+				  </div>
+				</div>}
+		</div>
+
+
+	
+
+       @for(proyecto <- lista2){
+
+		<div class="cuerpo">
+
+       		<div class="jumbotron2">
+		  		<h2 class="text-center" > proyecto /<b> @proyecto.nombre</b></h2>
+		  		<p class="text-center"> @proyecto.descripcion </p>
+		 		<h4  class="text-center">estado: <span style="color:@proyecto.C_estado()"><b>@proyecto.estado</b></span></h4> 
+
+            	 @if(session.get("username")!=null){
+              		<a href="@routes.proyectos_Controlador.Ver(proyecto.id)" class="btn btn-primary" role="button">Mas información</a>
+               	}
+		  	</div>
+		</div>
+      
+				  
+					}
+
+
+	   @for(evento <- lista3){
+				  
+
+  
+<div class="cuerpo">
+	<div class="jumbotron2">
+
+		  <h2 class="text-center">evento /<b> @evento.proyecto.getNombre()</b></h2>
+		  <p class="text-center">
+		    @evento.proyecto.descripcion
+		  </p>
+		  <br>
+		  <p class="text-center" style="color:green"><b>@evento.ubicacion</b></p>
+              <p class="text-center" style="@evento.proyecto.C_estado()"><b>@evento.proyecto.getEstimado()</b></p>
+ 
+ <br>
+              
+              <a href="@routes.proyectos_Controlador.VerE(evento.proyecto.id)" class="btn btn-primary" role="button">Mas información</a>
+               
+		  
+		</div>
+		</div>
+
+					}
+
+
+		@for(articulo <- lista4){
+				  <div class="cuerpo">
+
+				  <div class="jumbotron2">
+		  <h2 class="text-center"> articulo / <b>@articulo.titulo</b></h2>
+		  <p class="text-center">
+		    @articulo.reseña()
+		  </p>
+		  <p>Escrito por:</p>
+
+		  <ul>
+			@for(escritor <- articulo.escritores){
+
+        <li>@escritor.nombreCompleto()</li>
+                               }
+                               </ul>
+		  <p><a class="btn btn-primary" href="@routes.Normal.ver(articulo.cod_Articulo)" role="button">Leer Más</a></p>
+		  
+		</div>
+
+</div>
+					}
+		
+
+</div>
+
+
+</body>
+}

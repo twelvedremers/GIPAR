@@ -1,0 +1,76 @@
+@(lista: List[Miembro],miembros:Form[Login],tipos:List[String])
+
+@import views.html.include._
+@import helper._
+@import bootstrap3._
+
+
+@main("Miembros del GIPAR",2){
+<body>
+
+@form(routes.Normal.buscaC()) {
+	<form action="" method="POST">
+	        <div class="input-group">
+	         <span class="input-group-btn">
+	             
+	             <button type="submit" id="submit" class="btn btn-primary ">buscar</button>
+	            </span>
+	          @selector(miembros("area"),tipos)
+	           
+	            
+	        </div>
+	</form>
+}
+
+<br>
+
+	@if(flash.containsKey("correct")) {
+	<p style="color: green">
+		@flash.get("correct")
+	</p>
+}
+
+
+	<div class="contenedor-de-proyectos">
+		<table class="table table-striped table-hover ">
+		  <h3 class="tabla"><b>Miembros</b></h3>
+		  <thead>
+		    <tr>
+		      <th>Cedula</th>
+		      <th>nombre de usuario
+		      <th>Nombre </th>
+		      <th>Apellido</th>
+		      <th>Email</th>
+		      <th>Estado</th>
+		      <th></th>
+		      <th></th>
+		      @if(session.get("nivel_A")=="Administrador"){
+		      <th></th>}
+		    </tr>
+		  </thead>
+		  <tbody>
+
+		  @for(miembro <- lista){
+		    <tr>
+		      <td>@miembro.cedula</td>
+		      <td>@miembro.username</td>
+		      <td>@miembro.nombreS()</td>
+		      <td>@miembro.apellidos</td>
+		      <td>@miembro.correo</td>
+		      <td style="color:@miembro.EstadoC()">@miembro.Estado()</td>
+		      <td><a href="@routes.Normal.verMiembro(miembro.cod_G)" class="btn btn-primary btn-xs">ver</a></td>
+		      <td><a href="@routes.Cordinador.ModificarM(miembro.cod_G)" class="btn btn-primary btn-xs">editar</a></td>
+
+		 @if(session.get("nivel_A")=="Administrador"){
+		      <td><a href="@routes.Normal.borrarMiembro(miembro.cod_G)" class="btn btn-danger btn-xs">borrar</a></td>}
+		    </tr>
+		}
+		   
+		  </tbody>
+		</table> 
+
+
+		
+	</div>
+</body>
+}

@@ -1,0 +1,44 @@
+@(formulario: Form[Login])
+
+@import views.html.include._
+@import helper._
+@import bootstrap3._
+
+@main("Iniciar",0){
+
+	
+<body class="fondo-elec-gris">
+	
+
+		<section class="cont-acceso">
+			<form action="" method="post">
+				<legend class="text-center">	@if(flash.containsKey("invalid")) {
+	<p style="color: red">
+		@flash.get("invalid")
+	</p>
+}</legend>
+
+
+@form(routes.principal.ingresar()) {
+
+<div class="form-group">
+
+    <label>Usuario</label>
+     @text(formulario("usuario"),placeholder = "Usuario")
+   <label>Contraseña</label>
+    @password(formulario("contraseña"),placeholder = "contraseña")         		
+</div>
+   
+	<button id="submit" type="submit" value="Submit"class="btn btn-primary btn-block">Iniciar Sesion</button>
+   
+} 
+					
+	</form>
+</section>
+
+
+	
+</body>
+}
+
+ 
